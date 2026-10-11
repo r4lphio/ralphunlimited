@@ -9,6 +9,7 @@ import {
 	compactCount,
 	outputPerMinute,
 	runLabel,
+	runScorerVersion,
 	runTime,
 	type LabBenchmark,
 } from '../../lib/lab';
@@ -28,6 +29,7 @@ const megabytes = (bytes: number) => `${(bytes / 1024 / 1024).toFixed(1)} MB`;
 const count = (value: number) => value.toLocaleString('en-US');
 const percent = (part: number, whole: number) => `${whole ? Math.round((part / whole) * 100) : 0}%`;
 const runs = benchmark.runs.map((run) => ({ run, rate: outputPerMinute(run) }));
+const olderRuns = benchmark.runs.filter((run) => runScorerVersion(benchmark, run) !== benchmark.scorerVersion);
 ---
 
 <!doctype html>
@@ -126,8 +128,14 @@ const runs = benchmark.runs.map((run) => ({ run, rate: outputPerMinute(run) }));
 			</p>
 
 			<p class="crumb">
-				Scored by rubric {benchmark.rubricId}, scorer {benchmark.scorerVersion}. Scores from
-				different scorer versions are not comparable.
+				Scored by rubric {benchmark.rubricId}, scorer {benchmark.scorerVersion}.
+				{
+					olderRuns.length > 0 &&
+						` Runs scored by an older scorer: ${olderRuns
+							.map((run) => `${runLabel(run)} (${runScorerVersion(benchmark, run)})`)
+							.join(', ')}.`
+				}
+				Scores from different scorer versions are not comparable.
 			</p>
 		</main>
 		<Footer />

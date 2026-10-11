@@ -42,6 +42,8 @@ export type LabRun = {
 	model: string | null;
 	reasoning: string | null;
 	ranAt: string;
+	/** Scorer version that scored this run. Absent on runs published before it was recorded per run. */
+	scorerVersion?: string;
 	/** Time the agent worked, excluding pauses between resumes. Absent or null when not recorded. */
 	durationMs?: number | null;
 	/** Absent or null for older runs and for agents whose CLI does not report usage. */
@@ -79,6 +81,14 @@ export const generatedAt = lab.generatedAt;
 
 export function getBenchmark(id: string) {
 	return benchmarks.find((benchmark) => benchmark.id === id);
+}
+
+/**
+ * Scorer version for a run. After a scorer change, runs that were not rescored
+ * keep their old score and version, so one benchmark can mix versions.
+ */
+export function runScorerVersion(benchmark: LabBenchmark, run: LabRun) {
+	return run.scorerVersion ?? benchmark.scorerVersion;
 }
 
 /** Display name for a run: the model where known, otherwise the agent's default. */

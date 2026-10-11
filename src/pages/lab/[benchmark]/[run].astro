@@ -5,7 +5,7 @@ import Footer from '../../../components/Footer.astro';
 import LabTabs from '../../../components/lab/LabTabs.astro';
 import RatingRows from '../../../components/lab/RatingRows.astro';
 import ScorePair from '../../../components/lab/ScorePair.astro';
-import { benchmarks, bandColour, runLabel, runTime, type LabBenchmark, type LabRun } from '../../../lib/lab';
+import { benchmarks, bandColour, runLabel, runScorerVersion, runTime, type LabBenchmark, type LabRun } from '../../../lib/lab';
 import '../../../styles/lab.css';
 
 export function getStaticPaths() {
@@ -189,7 +189,7 @@ const description = `${runLabel(run)} scored ${run.total}/100 on ${benchmark.nam
 					<div class="obs">
 						<h4>Build</h4>
 						<p>{megabytes(run.buildBytes)} of static output</p>
-						<p>scorer {benchmark.scorerVersion}</p>
+						<p>scorer {runScorerVersion(benchmark, run)}</p>
 					</div>
 					</div>
 				</aside>
