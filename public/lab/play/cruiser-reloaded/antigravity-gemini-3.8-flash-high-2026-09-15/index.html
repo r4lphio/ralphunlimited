@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Cruiser Reloaded — Arcade Shmup</title>
+    <link rel="icon" type="image/png" href="assets/images/ship/tyrian_ship_0.png" />
+    <style>
+      @font-face {
+        font-family: 'PressStart2P';
+        src: url('./assets/fonts/PressStart2P.ttf') format('truetype');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Minecraftia';
+        src: url('./assets/fonts/Minecraftia2.ttf') format('truetype');
+        font-display: swap;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #05060b;
+        color: #e2e8f0;
+        font-family: 'PressStart2P', monospace, sans-serif;
+      }
+
+      #game-wrapper {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at center, #0a0d18 0%, #030408 100%);
+      }
+
+      #canvas-container {
+        position: relative;
+        box-shadow: 0 0 50px rgba(0, 180, 255, 0.15), 0 0 100px rgba(0, 0, 0, 0.8);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      canvas {
+        display: block;
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+        background: #030408;
+      }
+
+      /* CRT scanline / vignette effect overlay */
+      .crt-overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 0, 0, 0.25) 50%
+        ), linear-gradient(
+          90deg,
+          rgba(255, 0, 0, 0.03),
+          rgba(0, 255, 0, 0.01),
+          rgba(0, 0, 255, 0.03)
+        );
+        background-size: 100% 3px, 6px 100%;
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(0, 255, 200, 0.15);
+      }
+
+      .crt-overlay.disabled {
+        display: none;
+      }
+
+      /* Audio start prompt toast */
+      #audio-prompt {
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(8, 14, 28, 0.85);
+        border: 1px solid #00f0ff;
+        color: #00f0ff;
+        padding: 8px 16px;
+        font-size: 10px;
+        letter-spacing: 1px;
+        border-radius: 4px;
+        pointer-events: none;
+        transition: opacity 0.5s ease;
+        text-transform: uppercase;
+        animation: pulse-glow 2s infinite alternate;
+      }
+
+      @keyframes pulse-glow {
+        0% { box-shadow: 0 0 5px rgba(0, 240, 255, 0.4); }
+        100% { box-shadow: 0 0 15px rgba(0, 240, 255, 0.8); }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DtYcmQlR.js"></script>
+  </head>
+  <body>
+    <div id="game-wrapper">
+      <div id="canvas-container">
+        <canvas id="game-canvas" width="960" height="540"></canvas>
+        <div id="crt-overlay" class="crt-overlay"></div>
+      </div>
+      <div id="audio-prompt">Click anywhere or press any key to engage audio</div>
+    </div>
+  </body>
+</html>

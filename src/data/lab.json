@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-03T20:34:47.894Z",
+  "generatedAt": "2026-10-12T03:36:03.767Z",
   "benchmarks": [
     {
       "id": "retro-cruiser",
@@ -328,7 +328,7 @@
       "category": "JS / games / game-design",
       "difficulty": "hard",
       "rubricId": "web-arcade-v1",
-      "scorerVersion": "2.2.0",
+      "scorerVersion": "2.3.0",
       "runs": [
         {
           "slug": "cursor-gemini-3.8-flash-high-2026-10-03",
@@ -338,7 +338,7 @@
           "ranAt": "2026-10-03T16:05:05.637Z",
           "durationMs": 1100905,
           "tokens": null,
-          "total": 89,
+          "total": 88,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -348,7 +348,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 65ms, 59fps median"
+              "rationale": "no console errors, first frame in 83ms, 59fps median"
             },
             {
               "id": "loop",
@@ -361,15 +361,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 3.2,
-              "rationale": "29 distinct sprite sources, 44 distinct screens"
+              "score": 3,
+              "rationale": "28 distinct sprite sources, 41 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 5,
-              "rationale": "21 of 21 original assets reused by name"
+              "rationale": "21 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -397,9 +397,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.16,
+              "value": 1.04,
               "status": "info",
-              "detail": "159.7 → 184.9 draws per frame over 25s of one run"
+              "detail": "158.5 → 164.7 draws per frame over 10s of one run"
             }
           ],
           "buildBytes": 8658659,
@@ -407,90 +407,8 @@
           "shots": [
             "shots/voidbreaker/cursor-gemini-3.8-flash-high-2026-10-03/00-title.webp",
             "shots/voidbreaker/cursor-gemini-3.8-flash-high-2026-10-03/02-mid.webp"
-          ]
-        },
-        {
-          "slug": "claude-claude-sonnet-5-5-2026-09-29",
-          "agent": "claude",
-          "model": "claude-sonnet-5-5",
-          "reasoning": "xhigh",
-          "ranAt": "2026-09-29T12:24:51.059Z",
-          "total": 84,
-          "band": "strong",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 322ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 3.4,
-              "rationale": "14 distinct sprite sources, 80 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 4,
-              "rationale": "12 of 21 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 4,
-              "rationale": "64 modules, largest file 969 lines, typed, has tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "16401 byte README, 17 sections"
-            }
           ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 1.04,
-              "status": "info",
-              "detail": "281.0 → 291.1 draws per frame over 254s of one run"
-            }
-          ],
-          "buildBytes": 3420312,
-          "playable": "/lab/play/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/index.html",
-          "shots": [
-            "shots/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/00-title.webp",
-            "shots/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/02-mid.webp"
-          ],
-          "durationMs": 7549183,
-          "tokens": {
-            "input": 114741159,
-            "cachedInput": 113541054,
-            "output": 729810
-          }
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "antigravity-gemini-3.7-flash-high-2026-08-14",
@@ -508,7 +426,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 232ms, 59fps median"
+              "rationale": "no console errors, first frame in 220ms, 59fps median"
             },
             {
               "id": "loop",
@@ -522,14 +440,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.8,
-              "rationale": "17 distinct sprite sources, 57 distinct screens"
+              "rationale": "17 distinct sprite sources, 55 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 5,
-              "rationale": "16 of 21 original assets reused by name"
+              "rationale": "16 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -557,27 +475,27 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1,
+              "value": 1.01,
               "status": "info",
-              "detail": "27.1 → 27.1 draws per frame over 244s of one run"
+              "detail": "261.9 → 265.0 draws per frame over 245s of one run"
             }
           ],
-          "buildBytes": 24321983,
+          "buildBytes": 24324560,
           "playable": "/lab/play/voidbreaker/antigravity-gemini-3.7-flash-high-2026-08-14/index.html",
           "shots": [
             "shots/voidbreaker/antigravity-gemini-3.7-flash-high-2026-08-14/00-title.webp",
             "shots/voidbreaker/antigravity-gemini-3.7-flash-high-2026-08-14/02-mid.webp"
           ],
           "durationMs": 318866,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "codex-gpt-6.1-sol-2026-09-29",
-          "agent": "codex",
-          "model": "gpt-6.1-sol",
+          "slug": "claude-claude-sonnet-5-5-2026-09-29",
+          "agent": "claude",
+          "model": "claude-sonnet-5-5",
           "reasoning": "xhigh",
-          "ranAt": "2026-09-29T22:00:07.885Z",
-          "durationMs": 2080935,
+          "ranAt": "2026-09-29T12:24:51.059Z",
           "total": 79,
           "band": "strong",
           "gatePassed": true,
@@ -588,42 +506,42 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 136ms, 59fps median"
+              "rationale": "no console errors, first frame in 260ms, 59fps median"
             },
             {
               "id": "loop",
               "label": "Playable loop",
               "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
+              "score": 3.5,
+              "rationale": "input reaches a handler, score changes, no game-over state reached"
             },
             {
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 3.1,
-              "rationale": "10 distinct sprite sources, 78 distinct screens"
+              "score": 3.4,
+              "rationale": "14 distinct sprite sources, 80 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 3,
-              "rationale": "9 of 21 original assets reused by name"
+              "score": 4,
+              "rationale": "12 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
               "label": "Code quality",
               "weight": 2,
               "score": 4,
-              "rationale": "12 modules, largest file 916 lines, typed, has tests"
+              "rationale": "64 modules, largest file 969 lines, typed, has tests"
             },
             {
               "id": "docs",
               "label": "Documentation",
               "weight": 1,
               "score": 5,
-              "rationale": "10507 byte README, 8 sections"
+              "rationale": "16401 byte README, 17 sections"
             }
           ],
           "observations": [
@@ -637,22 +555,24 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.93,
+              "value": 1.15,
               "status": "info",
-              "detail": "299.7 → 278.9 draws per frame over 245s of one run"
+              "detail": "290.7 → 335.6 draws per frame over 261s of one run"
             }
           ],
-          "buildBytes": 1326345,
-          "playable": "/lab/play/voidbreaker/codex-gpt-6.1-sol-2026-09-29/index.html",
+          "buildBytes": 3420312,
+          "playable": "/lab/play/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/index.html",
           "shots": [
-            "shots/voidbreaker/codex-gpt-6.1-sol-2026-09-29/00-title.webp",
-            "shots/voidbreaker/codex-gpt-6.1-sol-2026-09-29/02-mid.webp"
+            "shots/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/00-title.webp",
+            "shots/voidbreaker/claude-claude-sonnet-5-5-2026-09-29/02-mid.webp"
           ],
+          "durationMs": 7549183,
           "tokens": {
-            "input": 2764216,
-            "cachedInput": 2618624,
-            "output": 60358
-          }
+            "input": 114741159,
+            "cachedInput": 113541054,
+            "output": 729810
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "grok-grok-4.6-2026-08-12",
@@ -660,7 +580,7 @@
           "model": "grok-4.6",
           "reasoning": "high",
           "ranAt": "2026-08-12T22:26:51.777Z",
-          "total": 78,
+          "total": 79,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -670,7 +590,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 301ms, 59fps median"
+              "rationale": "no console errors, first frame in 195ms, 59fps median"
             },
             {
               "id": "loop",
@@ -683,15 +603,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 2.7,
-              "rationale": "20 distinct sprite sources, 46 distinct screens"
+              "score": 2.8,
+              "rationale": "20 distinct sprite sources, 51 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 4,
-              "rationale": "13 of 21 original assets reused by name"
+              "rationale": "13 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -719,9 +639,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.17,
+              "value": 2.22,
               "status": "info",
-              "detail": "8.3 → 9.8 draws per frame over 270s of one run"
+              "detail": "46.4 → 102.9 draws per frame over 268s of one run"
             }
           ],
           "buildBytes": 3799190,
@@ -731,14 +651,16 @@
             "shots/voidbreaker/grok-grok-4.6-2026-08-12/02-mid.webp"
           ],
           "durationMs": 1244814,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "claude-claude-fable-5-1-1m-2026-09-02",
-          "agent": "claude",
-          "model": "claude-fable-5-1-1m",
-          "reasoning": "high",
-          "ranAt": "2026-09-02T02:48:06.856Z",
+          "slug": "codex-gpt-6.1-sol-2026-09-29",
+          "agent": "codex",
+          "model": "gpt-6.1-sol",
+          "reasoning": "xhigh",
+          "ranAt": "2026-09-29T22:00:07.885Z",
+          "durationMs": 2080935,
           "total": 78,
           "band": "strong",
           "gatePassed": true,
@@ -749,7 +671,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 151ms, 59fps median"
+              "rationale": "no console errors, first frame in 135ms, 59fps median"
             },
             {
               "id": "loop",
@@ -762,15 +684,98 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 2.7,
-              "rationale": "12 distinct sprite sources, 61 distinct screens"
+              "score": 3,
+              "rationale": "10 distinct sprite sources, 77 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "9 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "12 modules, largest file 916 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "10507 byte README, 8 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.95,
+              "status": "info",
+              "detail": "312.1 → 297.4 draws per frame over 243s of one run"
+            }
+          ],
+          "buildBytes": 1326345,
+          "playable": "/lab/play/voidbreaker/codex-gpt-6.1-sol-2026-09-29/index.html",
+          "shots": [
+            "shots/voidbreaker/codex-gpt-6.1-sol-2026-09-29/00-title.webp",
+            "shots/voidbreaker/codex-gpt-6.1-sol-2026-09-29/02-mid.webp"
+          ],
+          "tokens": {
+            "input": 2764216,
+            "cachedInput": 2618624,
+            "output": 60358
+          },
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "claude-claude-fable-5-1-1m-2026-09-02",
+          "agent": "claude",
+          "model": "claude-fable-5-1-1m",
+          "reasoning": "high",
+          "ranAt": "2026-09-02T02:48:06.856Z",
+          "total": 77,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 43ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2.5,
+              "rationale": "12 distinct sprite sources, 57 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 4,
-              "rationale": "13 of 21 original assets reused by name"
+              "rationale": "13 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -798,9 +803,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.5,
+              "value": 1.23,
               "status": "info",
-              "detail": "7.6 → 11.4 draws per frame over 242s of one run"
+              "detail": "174.8 → 215.0 draws per frame over 231s of one run"
             }
           ],
           "buildBytes": 2008059,
@@ -810,7 +815,8 @@
             "shots/voidbreaker/claude-claude-fable-5-1-1m-2026-09-02/02-mid.webp"
           ],
           "durationMs": 1714849,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6-astra-2026-09-04",
@@ -828,7 +834,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 147ms, 59fps median"
+              "rationale": "no console errors, first frame in 43ms, 59fps median"
             },
             {
               "id": "loop",
@@ -849,7 +855,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 3,
-              "rationale": "9 of 21 original assets reused by name"
+              "rationale": "9 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -877,9 +883,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.07,
+              "value": 1.01,
               "status": "info",
-              "detail": "13.6 → 14.5 draws per frame over 51s of one run"
+              "detail": "349.6 → 353.3 draws per frame over 105s of one run"
             }
           ],
           "buildBytes": 1762108,
@@ -889,7 +895,92 @@
             "shots/voidbreaker/codex-gpt-6-astra-2026-09-04/02-mid.webp"
           ],
           "durationMs": 2456973,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "claude-claude-haiku-5-5-2026-10-11",
+          "agent": "claude",
+          "model": "claude-haiku-5-5",
+          "reasoning": "xhigh",
+          "ranAt": "2026-10-11T22:06:41.392Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 1921589,
+          "tokens": {
+            "input": 36956465,
+            "cachedInput": 36535147,
+            "output": 312008
+          },
+          "total": 76,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 212ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2.1,
+              "rationale": "12 distinct sprite sources, 43 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "7 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 5,
+              "rationale": "33 modules, largest file 437 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "8765 byte README, 16 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.98,
+              "status": "info",
+              "detail": "242.7 → 239.0 draws per frame over 245s of one run"
+            }
+          ],
+          "buildBytes": 4697711,
+          "playable": "/lab/play/voidbreaker/claude-claude-haiku-5-5-2026-10-11/index.html",
+          "shots": [
+            "shots/voidbreaker/claude-claude-haiku-5-5-2026-10-11/00-title.webp",
+            "shots/voidbreaker/claude-claude-haiku-5-5-2026-10-11/02-mid.webp"
+          ]
         },
         {
           "slug": "claude-claude-fable-5-2026-07-21",
@@ -907,7 +998,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 168ms, 59fps median"
+              "rationale": "no console errors, first frame in 126ms, 59fps median"
             },
             {
               "id": "loop",
@@ -928,7 +1019,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 4,
-              "rationale": "11 of 21 original assets reused by name"
+              "rationale": "11 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -956,19 +1047,20 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.43,
+              "value": 1.11,
               "status": "info",
-              "detail": "6.1 → 8.7 draws per frame over 164s of one run"
+              "detail": "153.7 → 170.5 draws per frame over 122s of one run"
             }
           ],
-          "buildBytes": 2114377,
+          "buildBytes": 2114856,
           "playable": "/lab/play/voidbreaker/claude-claude-fable-5-2026-07-21/index.html",
           "shots": [
             "shots/voidbreaker/claude-claude-fable-5-2026-07-21/00-title.webp",
             "shots/voidbreaker/claude-claude-fable-5-2026-07-21/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-sonnet-2026-07-10",
@@ -976,7 +1068,7 @@
           "model": "sonnet",
           "reasoning": "default",
           "ranAt": "2026-07-10T14:14:20.334Z",
-          "total": 73,
+          "total": 74,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -986,7 +1078,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 172ms, 59fps median"
+              "rationale": "no console errors, first frame in 131ms, 59fps median"
             },
             {
               "id": "loop",
@@ -999,15 +1091,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 3.1,
-              "rationale": "19 distinct sprite sources, 61 distinct screens"
+              "score": 3.2,
+              "rationale": "20 distinct sprite sources, 61 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 3,
-              "rationale": "10 of 21 original assets reused by name"
+              "rationale": "10 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1040,14 +1132,15 @@
               "detail": "run too short to measure escalation"
             }
           ],
-          "buildBytes": 1730586,
+          "buildBytes": 1733196,
           "playable": "/lab/play/voidbreaker/claude-sonnet-2026-07-10/index.html",
           "shots": [
             "shots/voidbreaker/claude-sonnet-2026-07-10/00-title.webp",
             "shots/voidbreaker/claude-sonnet-2026-07-10/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "openrouter-stealth-union-alpha-2026-09-17",
@@ -1065,7 +1158,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 148ms, 59fps median"
+              "rationale": "no console errors, first frame in 57ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1086,7 +1179,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "3 of 21 original assets reused by name"
+              "rationale": "3 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1114,9 +1207,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.75,
+              "value": 1.16,
               "status": "info",
-              "detail": "12.1 → 9.1 draws per frame over 240s of one run"
+              "detail": "294.9 → 342.0 draws per frame over 244s of one run"
             }
           ],
           "buildBytes": 1247227,
@@ -1130,86 +1223,8 @@
             "input": 2375752,
             "cachedInput": 1995398,
             "output": 39645
-          }
-        },
-        {
-          "slug": "grok-grok-4.7-2026-09-22",
-          "agent": "grok",
-          "model": "grok-4.7",
-          "reasoning": "xhigh",
-          "ranAt": "2026-09-22T13:38:19.724Z",
-          "total": 67,
-          "band": "partial",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 213ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "input reaches a handler, no score change observed, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 1.6,
-              "rationale": "12 distinct sprite sources, 27 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 4,
-              "rationale": "12 of 21 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "16 modules, largest file 1176 lines, typed, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "4911 byte README, 7 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 0.67,
-              "status": "info",
-              "detail": "53.4 → 36.0 draws per frame over 273s of one run"
-            }
-          ],
-          "buildBytes": 2068878,
-          "playable": "/lab/play/voidbreaker/grok-grok-4.7-2026-09-22/index.html",
-          "shots": [
-            "shots/voidbreaker/grok-grok-4.7-2026-09-22/00-title.webp",
-            "shots/voidbreaker/grok-grok-4.7-2026-09-22/02-mid.webp"
-          ],
-          "durationMs": null,
-          "tokens": null
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6-sol-2026-09-22",
@@ -1217,7 +1232,7 @@
           "model": "gpt-6-sol",
           "reasoning": "high",
           "ranAt": "2026-09-22T20:57:19.313Z",
-          "total": 67,
+          "total": 72,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -1227,28 +1242,28 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 46ms, 59fps median"
+              "rationale": "no console errors, first frame in 54ms, 59fps median"
             },
             {
               "id": "loop",
               "label": "Playable loop",
               "weight": 2,
-              "score": 3.5,
-              "rationale": "input reaches a handler, score changes, no game-over state reached"
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
             },
             {
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
               "score": 2.9,
-              "rationale": "12 distinct sprite sources, 68 distinct screens"
+              "rationale": "12 distinct sprite sources, 69 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "4 of 21 original assets reused by name"
+              "rationale": "4 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1278,7 +1293,7 @@
               "label": "Late vs early draw calls",
               "value": 0.96,
               "status": "info",
-              "detail": "216.3 → 208.0 draws per frame over 245s of one run"
+              "detail": "215.9 → 208.0 draws per frame over 243s of one run"
             }
           ],
           "buildBytes": 782033,
@@ -1292,15 +1307,16 @@
             "input": 4898859,
             "cachedInput": 4739968,
             "output": 53940
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "codex-gpt-5.6-sol-2026-09-02",
-          "agent": "codex",
-          "model": "gpt-5.6-sol",
-          "reasoning": "high",
-          "ranAt": "2026-09-02T02:00:51.162Z",
-          "total": 62,
+          "slug": "grok-grok-4.7-2026-09-22",
+          "agent": "grok",
+          "model": "grok-4.7",
+          "reasoning": "xhigh",
+          "ranAt": "2026-09-22T13:38:19.724Z",
+          "total": 67,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -1310,42 +1326,42 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 153ms, 59fps median"
+              "rationale": "no console errors, first frame in 264ms, 59fps median"
             },
             {
               "id": "loop",
               "label": "Playable loop",
               "weight": 2,
               "score": 3.5,
-              "rationale": "input reaches a handler, score changes, no game-over state reached"
+              "rationale": "input reaches a handler, no score change observed, reaches game over"
             },
             {
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 1.9,
-              "rationale": "8 distinct sprite sources, 46 distinct screens"
+              "score": 1.6,
+              "rationale": "12 distinct sprite sources, 27 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 3,
-              "rationale": "8 of 21 original assets reused by name"
+              "score": 4,
+              "rationale": "12 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
               "label": "Code quality",
               "weight": 2,
-              "score": 2.5,
-              "rationale": "7 modules, largest file 1086 lines, typed, no tests"
+              "score": 3.5,
+              "rationale": "16 modules, largest file 1176 lines, typed, no tests"
             },
             {
               "id": "docs",
               "label": "Documentation",
               "weight": 1,
               "score": 5,
-              "rationale": "3920 byte README, 7 sections"
+              "rationale": "4911 byte README, 7 sections"
             }
           ],
           "observations": [
@@ -1359,19 +1375,20 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.95,
+              "value": 0.68,
               "status": "info",
-              "detail": "8.4 → 8.0 draws per frame over 244s of one run"
+              "detail": "53.3 → 36.0 draws per frame over 272s of one run"
             }
           ],
-          "buildBytes": 1029133,
-          "playable": "/lab/play/voidbreaker/codex-gpt-5.6-sol-2026-09-02/index.html",
+          "buildBytes": 2068878,
+          "playable": "/lab/play/voidbreaker/grok-grok-4.7-2026-09-22/index.html",
           "shots": [
-            "shots/voidbreaker/codex-gpt-5.6-sol-2026-09-02/00-title.webp",
-            "shots/voidbreaker/codex-gpt-5.6-sol-2026-09-02/02-mid.webp"
+            "shots/voidbreaker/grok-grok-4.7-2026-09-22/00-title.webp",
+            "shots/voidbreaker/grok-grok-4.7-2026-09-22/02-mid.webp"
           ],
-          "durationMs": 698271,
-          "tokens": null
+          "durationMs": null,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-5.6-sol-2026-07-21",
@@ -1379,7 +1396,7 @@
           "model": "gpt-5.6-sol",
           "reasoning": "high",
           "ranAt": "2026-07-21T14:19:46.744Z",
-          "total": 61,
+          "total": 67,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -1389,7 +1406,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 326ms, 59fps median"
+              "rationale": "no console errors, first frame in 162ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1403,14 +1420,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.2,
-              "rationale": "7 distinct sprite sources, 55 distinct screens"
+              "rationale": "7 distinct sprite sources, 56 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 0,
-              "rationale": "0 of 21 original assets reused by name"
+              "score": 2,
+              "rationale": "2 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1438,19 +1455,180 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.05,
+              "value": 1.11,
               "status": "info",
-              "detail": "24.7 → 26.1 draws per frame over 245s of one run"
+              "detail": "237.9 → 264.0 draws per frame over 248s of one run"
             }
           ],
-          "buildBytes": 418282,
+          "buildBytes": 418822,
           "playable": "/lab/play/voidbreaker/codex-gpt-5.6-sol-2026-07-21/index.html",
           "shots": [
             "shots/voidbreaker/codex-gpt-5.6-sol-2026-07-21/00-title.webp",
             "shots/voidbreaker/codex-gpt-5.6-sol-2026-07-21/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "codex-gpt-5.6-sol-2026-09-02",
+          "agent": "codex",
+          "model": "gpt-5.6-sol",
+          "reasoning": "high",
+          "ranAt": "2026-09-02T02:00:51.162Z",
+          "total": 62,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 192ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "input reaches a handler, score changes, no game-over state reached"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 1.9,
+              "rationale": "8 distinct sprite sources, 46 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "8 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 2.5,
+              "rationale": "7 modules, largest file 1086 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "3920 byte README, 7 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.06,
+              "status": "info",
+              "detail": "187.3 → 199.0 draws per frame over 243s of one run"
+            }
+          ],
+          "buildBytes": 1030453,
+          "playable": "/lab/play/voidbreaker/codex-gpt-5.6-sol-2026-09-02/index.html",
+          "shots": [
+            "shots/voidbreaker/codex-gpt-5.6-sol-2026-09-02/00-title.webp",
+            "shots/voidbreaker/codex-gpt-5.6-sol-2026-09-02/02-mid.webp"
+          ],
+          "durationMs": 698271,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "codex-gpt-5.6-terra-2026-07-21",
+          "agent": "codex",
+          "model": "gpt-5.6-terra",
+          "reasoning": "high",
+          "ranAt": "2026-07-21T14:19:48.453Z",
+          "total": 58,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 163ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 0.7,
+              "rationale": "0 distinct sprite sources, 23 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 2,
+              "rationale": "3 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "5 modules, largest file 49 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 4,
+              "rationale": "2132 byte README, 5 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.04,
+              "status": "info",
+              "detail": "193.2 → 200.0 draws per frame over 244s of one run"
+            }
+          ],
+          "buildBytes": 12280315,
+          "playable": "/lab/play/voidbreaker/codex-gpt-5.6-terra-2026-07-21/index.html",
+          "shots": [
+            "shots/voidbreaker/codex-gpt-5.6-terra-2026-07-21/00-title.webp",
+            "shots/voidbreaker/codex-gpt-5.6-terra-2026-07-21/02-mid.webp"
+          ],
+          "durationMs": null,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-opus-5-5-1m-2026-09-22",
@@ -1468,7 +1646,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 57ms, 59fps median"
+              "rationale": "no console errors, first frame in 67ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1489,7 +1667,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 4,
-              "rationale": "13 of 21 original assets reused by name"
+              "rationale": "13 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1533,7 +1711,8 @@
             "input": 11300008,
             "cachedInput": 11018836,
             "output": 156845
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "openrouter-z-ai-glm-5.3-flash-2026-08-31",
@@ -1551,7 +1730,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 75ms, 59fps median"
+              "rationale": "no console errors, first frame in 44ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1572,7 +1751,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "5 of 21 original assets reused by name"
+              "rationale": "5 of 21 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1600,98 +1779,20 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.08,
+              "value": 0.96,
               "status": "info",
-              "detail": "12.2 → 13.1 draws per frame over 243s of one run"
+              "detail": "192.0 → 185.0 draws per frame over 243s of one run"
             }
           ],
-          "buildBytes": 2577214,
+          "buildBytes": 2578229,
           "playable": "/lab/play/voidbreaker/openrouter-z-ai-glm-5.3-flash-2026-08-31/index.html",
           "shots": [
             "shots/voidbreaker/openrouter-z-ai-glm-5.3-flash-2026-08-31/00-title.webp",
             "shots/voidbreaker/openrouter-z-ai-glm-5.3-flash-2026-08-31/02-mid.webp"
           ],
           "durationMs": 716039,
-          "tokens": null
-        },
-        {
-          "slug": "codex-gpt-5.6-terra-2026-07-21",
-          "agent": "codex",
-          "model": "gpt-5.6-terra",
-          "reasoning": "high",
-          "ranAt": "2026-07-21T14:19:48.453Z",
-          "total": 52,
-          "band": "partial",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 764ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 0.7,
-              "rationale": "0 distinct sprite sources, 23 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 0,
-              "rationale": "0 of 21 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "5 modules, largest file 49 lines, typed, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 4,
-              "rationale": "2132 byte README, 5 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 1.02,
-              "status": "info",
-              "detail": "0.0 → 0.0 draws per frame over 243s of one run"
-            }
-          ],
-          "buildBytes": 12279481,
-          "playable": "/lab/play/voidbreaker/codex-gpt-5.6-terra-2026-07-21/index.html",
-          "shots": [
-            "shots/voidbreaker/codex-gpt-5.6-terra-2026-07-21/00-title.webp",
-            "shots/voidbreaker/codex-gpt-5.6-terra-2026-07-21/02-mid.webp"
-          ],
-          "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         }
       ]
     },
@@ -1702,7 +1803,7 @@
       "category": "JS / games / game-design",
       "difficulty": "hard",
       "rubricId": "web-arcade-v1",
-      "scorerVersion": "2.2.0",
+      "scorerVersion": "2.3.0",
       "runs": [
         {
           "slug": "antigravity-gemini-3.7-flash-high-2026-08-14",
@@ -1781,7 +1882,8 @@
             "shots/cruiser-reloaded/antigravity-gemini-3.7-flash-high-2026-08-14/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.2.0"
         },
         {
           "slug": "cursor-gemini-3.8-flash-high-2026-10-03",
@@ -1801,7 +1903,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 90ms, 59fps median"
+              "rationale": "no console errors, first frame in 51ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1814,15 +1916,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 4.6,
-              "rationale": "52 distinct sprite sources, 67 distinct screens"
+              "score": 4.7,
+              "rationale": "52 distinct sprite sources, 71 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 5,
-              "rationale": "93 of 93 original assets reused by name"
+              "rationale": "93 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -1850,9 +1952,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.36,
+              "value": 1.69,
               "status": "info",
-              "detail": "82.9 → 112.7 draws per frame over 76s of one run"
+              "detail": "71.3 → 120.3 draws per frame over 68s of one run"
             }
           ],
           "buildBytes": 62666772,
@@ -1860,15 +1962,17 @@
           "shots": [
             "shots/cruiser-reloaded/cursor-gemini-3.8-flash-high-2026-10-03/00-title.webp",
             "shots/cruiser-reloaded/cursor-gemini-3.8-flash-high-2026-10-03/02-mid.webp"
-          ]
+          ],
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "claude-claude-sonnet-5-5-2026-09-29",
-          "agent": "claude",
-          "model": "claude-sonnet-5-5",
+          "slug": "codex-gpt-6.1-sol-2026-09-29",
+          "agent": "codex",
+          "model": "gpt-6.1-sol",
           "reasoning": "xhigh",
-          "ranAt": "2026-09-29T12:24:48.334Z",
-          "total": 91,
+          "ranAt": "2026-09-29T22:00:04.133Z",
+          "durationMs": 3037911,
+          "total": 92,
           "band": "exceptional",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -1878,91 +1982,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 192ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 5,
-              "rationale": "43 distinct sprite sources, 169 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 3,
-              "rationale": "43 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 4,
-              "rationale": "67 modules, largest file 798 lines, typed, has tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "15057 byte README, 19 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 0.89,
-              "status": "info",
-              "detail": "35.1 → 31.3 draws per frame over 269s of one run"
-            }
-          ],
-          "buildBytes": 11952703,
-          "playable": "/lab/play/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/00-title.webp",
-            "shots/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/02-mid.webp"
-          ],
-          "durationMs": 7963886,
-          "tokens": {
-            "input": 110665707,
-            "cachedInput": 109957969,
-            "output": 500838
-          }
-        },
-        {
-          "slug": "codex-gpt-6.1-sol-2026-09-29",
-          "agent": "codex",
-          "model": "gpt-6.1-sol",
-          "reasoning": "xhigh",
-          "ranAt": "2026-09-29T22:00:04.133Z",
-          "durationMs": 3037911,
-          "total": 89,
-          "band": "strong",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 91ms, 59fps median"
+              "rationale": "no console errors, first frame in 102ms, 59fps median"
             },
             {
               "id": "loop",
@@ -1976,14 +1996,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 4.7,
-              "rationale": "35 distinct sprite sources, 133 distinct screens"
+              "rationale": "35 distinct sprite sources, 116 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 2,
-              "rationale": "15 of 93 original assets reused by name"
+              "score": 3,
+              "rationale": "28 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2011,9 +2031,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.93,
+              "value": 0.79,
               "status": "info",
-              "detail": "276.5 → 258.1 draws per frame over 180s of one run"
+              "detail": "261.3 → 205.3 draws per frame over 244s of one run"
             }
           ],
           "buildBytes": 3198413,
@@ -2026,7 +2046,8 @@
             "input": 4318623,
             "cachedInput": 4159872,
             "output": 88712
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-fable-5-2026-07-25",
@@ -2034,7 +2055,7 @@
           "model": "claude-fable-5",
           "reasoning": "high",
           "ranAt": "2026-07-25T19:34:07.623Z",
-          "total": 86,
+          "total": 89,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2044,7 +2065,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 208ms, 59fps median"
+              "rationale": "no console errors, first frame in 62ms, 59fps median"
             },
             {
               "id": "loop",
@@ -2058,14 +2079,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 5,
-              "rationale": "46 distinct sprite sources, 86 distinct screens"
+              "rationale": "46 distinct sprite sources, 83 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 2,
-              "rationale": "20 of 93 original assets reused by name"
+              "score": 3,
+              "rationale": "36 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2093,256 +2114,20 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.1,
+              "value": 1.07,
               "status": "info",
-              "detail": "26.6 → 29.3 draws per frame over 269s of one run"
+              "detail": "180.1 → 192.9 draws per frame over 269s of one run"
             }
           ],
-          "buildBytes": 7464757,
+          "buildBytes": 7465576,
           "playable": "/lab/play/cruiser-reloaded/claude-claude-fable-5-2026-07-25/index.html",
           "shots": [
             "shots/cruiser-reloaded/claude-claude-fable-5-2026-07-25/00-title.webp",
             "shots/cruiser-reloaded/claude-claude-fable-5-2026-07-25/02-mid.webp"
           ],
           "durationMs": 3154200,
-          "tokens": null
-        },
-        {
-          "slug": "codex-gpt-6-astra-2026-09-04",
-          "agent": "codex",
-          "model": "gpt-6-astra",
-          "reasoning": "xhigh",
-          "ranAt": "2026-09-04T19:47:38.292Z",
-          "total": 85,
-          "band": "strong",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 181ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 4.6,
-              "rationale": "34 distinct sprite sources, 122 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 2,
-              "rationale": "15 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 4,
-              "rationale": "13 modules, largest file 874 lines, typed, has tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "9920 byte README, 8 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 0.98,
-              "status": "info",
-              "detail": "19.6 → 19.1 draws per frame over 108s of one run"
-            }
-          ],
-          "buildBytes": 2704827,
-          "playable": "/lab/play/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/00-title.webp",
-            "shots/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/02-mid.webp"
-          ],
-          "durationMs": 2448449,
-          "tokens": null
-        },
-        {
-          "slug": "grok-cli-default-2026-08-12",
-          "agent": "grok",
-          "model": "grok-4.6",
-          "reasoning": "high",
-          "ranAt": "2026-08-12T21:07:12.153Z",
-          "total": 84,
-          "band": "strong",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 177ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 4.6,
-              "rationale": "52 distinct sprite sources, 66 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 2,
-              "rationale": "21 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "29 modules, largest file 1107 lines, typed, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "8866 byte README, 14 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 0.5,
-              "status": "info",
-              "detail": "21.0 → 10.5 draws per frame over 244s of one run"
-            }
-          ],
-          "buildBytes": 5720171,
-          "playable": "/lab/play/cruiser-reloaded/grok-cli-default-2026-08-12/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/grok-cli-default-2026-08-12/00-title.webp",
-            "shots/cruiser-reloaded/grok-cli-default-2026-08-12/02-mid.webp"
-          ],
-          "durationMs": 1118259,
-          "tokens": null
-        },
-        {
-          "slug": "grok-grok-4.7-2026-09-21",
-          "agent": "grok",
-          "model": "grok-4.7",
-          "reasoning": "xhigh",
-          "ranAt": "2026-09-21T21:19:02.961Z",
-          "total": 83,
-          "band": "strong",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 245ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "input reaches a handler, score changes, no game-over state reached"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 4.7,
-              "rationale": "35 distinct sprite sources, 94 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 3,
-              "rationale": "27 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "18 modules, largest file 1783 lines, typed, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "5509 byte README, 8 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 0.62,
-              "status": "info",
-              "detail": "3.8 → 2.3 draws per frame over 243s of one run"
-            }
-          ],
-          "buildBytes": 5848068,
-          "playable": "/lab/play/cruiser-reloaded/grok-grok-4.7-2026-09-21/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/grok-grok-4.7-2026-09-21/00-title.webp",
-            "shots/cruiser-reloaded/grok-grok-4.7-2026-09-21/02-mid.webp"
-          ],
-          "durationMs": 2916716,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-fable-5-1-1m-2026-09-02",
@@ -2350,7 +2135,7 @@
           "model": "claude-fable-5-1-1m",
           "reasoning": "high",
           "ranAt": "2026-09-02T02:47:59.688Z",
-          "total": 82,
+          "total": 87,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2360,28 +2145,28 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 264ms, 59fps median"
+              "rationale": "no console errors, first frame in 279ms, 59fps median"
             },
             {
               "id": "loop",
               "label": "Playable loop",
               "weight": 2,
-              "score": 3.5,
-              "rationale": "input reaches a handler, score changes, no game-over state reached"
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
             },
             {
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
               "score": 4.6,
-              "rationale": "34 distinct sprite sources, 100 distinct screens"
+              "rationale": "34 distinct sprite sources, 102 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 3,
-              "rationale": "29 of 93 original assets reused by name"
+              "rationale": "32 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2409,9 +2194,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.64,
+              "value": 0.77,
               "status": "info",
-              "detail": "5.8 → 3.7 draws per frame over 268s of one run"
+              "detail": "13.6 → 10.5 draws per frame over 269s of one run"
             }
           ],
           "buildBytes": 9170612,
@@ -2421,15 +2206,16 @@
             "shots/cruiser-reloaded/claude-claude-fable-5-1-1m-2026-09-02/02-mid.webp"
           ],
           "durationMs": 2605278,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "claude-claude-opus-5-2026-08-04",
+          "slug": "claude-claude-sonnet-5-5-2026-09-29",
           "agent": "claude",
-          "model": "claude-opus-5",
-          "reasoning": "max",
-          "ranAt": "2026-08-04T15:17:52.908Z",
-          "total": 79,
+          "model": "claude-sonnet-5-5",
+          "reasoning": "xhigh",
+          "ranAt": "2026-09-29T12:24:48.334Z",
+          "total": 86,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2439,28 +2225,192 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 131ms, 59fps median"
+              "rationale": "no console errors, first frame in 166ms, 59fps median"
             },
             {
               "id": "loop",
               "label": "Playable loop",
               "weight": 2,
               "score": 3.5,
-              "rationale": "input reaches a handler, no score change observed, reaches game over"
+              "rationale": "input reaches a handler, score changes, no game-over state reached"
             },
             {
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 4.6,
-              "rationale": "33 distinct sprite sources, 85 distinct screens"
+              "score": 5,
+              "rationale": "43 distinct sprite sources, 138 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "43 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "67 modules, largest file 798 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "15057 byte README, 19 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.26,
+              "status": "info",
+              "detail": "24.6 → 6.3 draws per frame over 269s of one run"
+            }
+          ],
+          "buildBytes": 11952703,
+          "playable": "/lab/play/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/00-title.webp",
+            "shots/cruiser-reloaded/claude-claude-sonnet-5-5-2026-09-29/02-mid.webp"
+          ],
+          "durationMs": 7963886,
+          "tokens": {
+            "input": 110665707,
+            "cachedInput": 109957969,
+            "output": 500838
+          },
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "grok-cli-default-2026-08-12",
+          "agent": "grok",
+          "model": "grok-4.6",
+          "reasoning": "high",
+          "ranAt": "2026-08-12T21:07:12.153Z",
+          "total": 86,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 41ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 4.4,
+              "rationale": "50 distinct sprite sources, 61 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "45 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "29 modules, largest file 1107 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "8866 byte README, 14 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.96,
+              "status": "info",
+              "detail": "357.8 → 344.9 draws per frame over 243s of one run"
+            }
+          ],
+          "buildBytes": 5720702,
+          "playable": "/lab/play/cruiser-reloaded/grok-cli-default-2026-08-12/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/grok-cli-default-2026-08-12/00-title.webp",
+            "shots/cruiser-reloaded/grok-cli-default-2026-08-12/02-mid.webp"
+          ],
+          "durationMs": 1118259,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "claude-claude-opus-5-2026-08-04",
+          "agent": "claude",
+          "model": "claude-opus-5",
+          "reasoning": "max",
+          "ranAt": "2026-08-04T15:17:52.908Z",
+          "total": 86,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 40ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 5,
+              "rationale": "44 distinct sprite sources, 167 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "11 of 93 original assets reused by name"
+              "rationale": "11 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2488,9 +2438,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.85,
+              "value": 0.86,
               "status": "info",
-              "detail": "8.7 → 16.0 draws per frame over 243s of one run"
+              "detail": "266.7 → 228.6 draws per frame over 244s of one run"
             }
           ],
           "buildBytes": 4539155,
@@ -2500,7 +2450,252 @@
             "shots/cruiser-reloaded/claude-claude-opus-5-2026-08-04/02-mid.webp"
           ],
           "durationMs": 4570282,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "codex-gpt-6-astra-2026-09-04",
+          "agent": "codex",
+          "model": "gpt-6-astra",
+          "reasoning": "xhigh",
+          "ranAt": "2026-09-04T19:47:38.292Z",
+          "total": 85,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 104ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 4.6,
+              "rationale": "34 distinct sprite sources, 131 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 2,
+              "rationale": "19 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "13 modules, largest file 874 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "9920 byte README, 8 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": true,
+              "status": "pass",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.91,
+              "status": "info",
+              "detail": "283.8 → 257.6 draws per frame over 196s of one run"
+            }
+          ],
+          "buildBytes": 2704827,
+          "playable": "/lab/play/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/00-title.webp",
+            "shots/cruiser-reloaded/codex-gpt-6-astra-2026-09-04/02-mid.webp"
+          ],
+          "durationMs": 2448449,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "grok-grok-4.7-2026-09-21",
+          "agent": "grok",
+          "model": "grok-4.7",
+          "reasoning": "xhigh",
+          "ranAt": "2026-09-21T21:19:02.961Z",
+          "total": 82,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 291ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "input reaches a handler, score changes, no game-over state reached"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 4.5,
+              "rationale": "35 distinct sprite sources, 75 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "46 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "18 modules, largest file 1783 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "5509 byte README, 8 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.64,
+              "status": "info",
+              "detail": "3.6 → 2.3 draws per frame over 243s of one run"
+            }
+          ],
+          "buildBytes": 5840468,
+          "playable": "/lab/play/cruiser-reloaded/grok-grok-4.7-2026-09-21/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/grok-grok-4.7-2026-09-21/00-title.webp",
+            "shots/cruiser-reloaded/grok-grok-4.7-2026-09-21/02-mid.webp"
+          ],
+          "durationMs": 2916716,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "claude-claude-haiku-5-5-2026-10-11",
+          "agent": "claude",
+          "model": "claude-haiku-5-5",
+          "reasoning": "xhigh",
+          "ranAt": "2026-10-11T22:06:37.027Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 1873907,
+          "tokens": {
+            "input": 39269362,
+            "cachedInput": 38808031,
+            "output": 348827
+          },
+          "total": 80,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 168ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "input reaches a handler, no score change observed, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 4,
+              "rationale": "37 distinct sprite sources, 54 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "38 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "44 modules, largest file 767 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "12427 byte README, 18 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.09,
+              "status": "info",
+              "detail": "8.9 → 9.7 draws per frame over 268s of one run"
+            }
+          ],
+          "buildBytes": 8807449,
+          "playable": "/lab/play/cruiser-reloaded/claude-claude-haiku-5-5-2026-10-11/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/claude-claude-haiku-5-5-2026-10-11/00-title.webp",
+            "shots/cruiser-reloaded/claude-claude-haiku-5-5-2026-10-11/02-mid.webp"
+          ]
         },
         {
           "slug": "openrouter-stealth-union-alpha-2026-09-17",
@@ -2518,7 +2713,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 423ms"
+              "rationale": "no console errors, first frame in 481ms"
             },
             {
               "id": "loop",
@@ -2539,7 +2734,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "12 of 93 original assets reused by name"
+              "rationale": "19 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2572,7 +2767,7 @@
               "detail": "run too short to measure escalation"
             }
           ],
-          "buildBytes": 2957224,
+          "buildBytes": 2957122,
           "playable": "/lab/play/cruiser-reloaded/openrouter-stealth-union-alpha-2026-09-17/index.html",
           "shots": [
             "shots/cruiser-reloaded/openrouter-stealth-union-alpha-2026-09-17/00-title.webp",
@@ -2583,7 +2778,8 @@
             "input": 5014227,
             "cachedInput": 4484146,
             "output": 65033
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-fable-5-2026-07-21",
@@ -2591,7 +2787,7 @@
           "model": "claude-fable-5",
           "reasoning": "high",
           "ranAt": "2026-07-21T14:19:37.711Z",
-          "total": 75,
+          "total": 78,
           "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2601,7 +2797,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 332ms, 59fps median"
+              "rationale": "no console errors, first frame in 279ms, 59fps median"
             },
             {
               "id": "loop",
@@ -2615,14 +2811,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.9,
-              "rationale": "31 distinct sprite sources, 32 distinct screens"
+              "rationale": "31 distinct sprite sources, 31 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 2,
-              "rationale": "22 of 93 original assets reused by name"
+              "score": 3,
+              "rationale": "37 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2650,9 +2846,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.1,
+              "value": 1.09,
               "status": "info",
-              "detail": "7.3 → 8.0 draws per frame over 269s of one run"
+              "detail": "8.3 → 9.0 draws per frame over 269s of one run"
             }
           ],
           "buildBytes": 8278773,
@@ -2662,7 +2858,8 @@
             "shots/cruiser-reloaded/claude-claude-fable-5-2026-07-21/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-5.6-sol-2026-09-02",
@@ -2670,8 +2867,8 @@
           "model": "gpt-5.6-sol",
           "reasoning": "high",
           "ranAt": "2026-09-02T02:00:45.254Z",
-          "total": 73,
-          "band": "partial",
+          "total": 76,
+          "band": "strong",
           "gatePassed": true,
           "gateFailedAt": null,
           "criteria": [
@@ -2680,7 +2877,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 133ms, 59fps median"
+              "rationale": "no console errors, first frame in 63ms, 59fps median"
             },
             {
               "id": "loop",
@@ -2700,8 +2897,8 @@
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 2,
-              "rationale": "18 of 93 original assets reused by name"
+              "score": 3,
+              "rationale": "25 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2729,177 +2926,20 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.04,
+              "value": 1.13,
               "status": "info",
-              "detail": "12.4 → 13.0 draws per frame over 243s of one run"
+              "detail": "203.8 → 230.4 draws per frame over 243s of one run"
             }
           ],
-          "buildBytes": 2624144,
+          "buildBytes": 2624843,
           "playable": "/lab/play/cruiser-reloaded/codex-gpt-5.6-sol-2026-09-02/index.html",
           "shots": [
             "shots/cruiser-reloaded/codex-gpt-5.6-sol-2026-09-02/00-title.webp",
             "shots/cruiser-reloaded/codex-gpt-5.6-sol-2026-09-02/02-mid.webp"
           ],
           "durationMs": 630738,
-          "tokens": null
-        },
-        {
-          "slug": "codex-gpt-5.6-terra-2026-07-21",
-          "agent": "codex",
-          "model": "gpt-5.6-terra",
-          "reasoning": "high",
-          "ranAt": "2026-07-21T14:19:36.775Z",
-          "total": 72,
-          "band": "partial",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 129ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 5,
-              "rationale": "input reaches a handler, score changes, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 2,
-              "rationale": "13 distinct sprite sources, 38 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 4,
-              "rationale": "61 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 3,
-              "rationale": "3 modules, largest file 59 lines, untyped, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "2430 byte README, 7 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 1.46,
-              "status": "info",
-              "detail": "7.7 → 11.3 draws per frame over 27s of one run"
-            }
-          ],
-          "buildBytes": 3937256,
-          "playable": "/lab/play/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/00-title.webp",
-            "shots/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/02-mid.webp"
-          ],
-          "durationMs": null,
-          "tokens": null
-        },
-        {
-          "slug": "cursor-muse-spark-1.3-xhigh-2026-09-15",
-          "agent": "cursor",
-          "model": "muse-spark-1.3-xhigh",
-          "reasoning": "default",
-          "ranAt": "2026-09-15T16:46:30.316Z",
-          "total": 72,
-          "band": "partial",
-          "gatePassed": true,
-          "gateFailedAt": null,
-          "criteria": [
-            {
-              "id": "runtime",
-              "label": "Runtime health",
-              "weight": 2,
-              "score": 5,
-              "rationale": "no console errors, first frame in 82ms, 59fps median"
-            },
-            {
-              "id": "loop",
-              "label": "Playable loop",
-              "weight": 2,
-              "score": 3.5,
-              "rationale": "input reaches a handler, no score change observed, reaches game over"
-            },
-            {
-              "id": "depth",
-              "label": "Systems depth",
-              "weight": 4,
-              "score": 3,
-              "rationale": "21 distinct sprite sources, 53 distinct screens"
-            },
-            {
-              "id": "assets",
-              "label": "Asset lineage",
-              "weight": 2,
-              "score": 4,
-              "rationale": "65 of 93 original assets reused by name"
-            },
-            {
-              "id": "code",
-              "label": "Code quality",
-              "weight": 2,
-              "score": 2.5,
-              "rationale": "5 modules, largest file 1967 lines, typed, no tests"
-            },
-            {
-              "id": "docs",
-              "label": "Documentation",
-              "weight": 1,
-              "score": 5,
-              "rationale": "6038 byte README, 6 sections"
-            }
-          ],
-          "observations": [
-            {
-              "id": "loop.restartWorks",
-              "label": "Restarts after game over",
-              "value": false,
-              "status": "fail",
-              "detail": null
-            },
-            {
-              "id": "depth.spawnRateDelta",
-              "label": "Late vs early draw calls",
-              "value": 1,
-              "status": "info",
-              "detail": "1.0 → 1.0 draws per frame over 259s of one run"
-            }
-          ],
-          "buildBytes": 9838794,
-          "playable": "/lab/play/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/index.html",
-          "shots": [
-            "shots/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/00-title.webp",
-            "shots/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/02-mid.webp"
-          ],
-          "durationMs": 560569,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-5.6-sol-2026-07-21",
@@ -2907,7 +2947,7 @@
           "model": "gpt-5.6-sol",
           "reasoning": "high",
           "ranAt": "2026-07-21T14:19:35.777Z",
-          "total": 70,
+          "total": 74,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2917,7 +2957,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 118ms, 59fps median"
+              "rationale": "no console errors, first frame in 49ms, 59fps median"
             },
             {
               "id": "loop",
@@ -2937,8 +2977,8 @@
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
-              "score": 2,
-              "rationale": "13 of 93 original assets reused by name"
+              "score": 3,
+              "rationale": "24 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -2966,27 +3006,28 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1,
+              "value": 0.97,
               "status": "info",
-              "detail": "19.9 → 19.8 draws per frame over 243s of one run"
+              "detail": "129.3 → 124.8 draws per frame over 243s of one run"
             }
           ],
-          "buildBytes": 3399869,
+          "buildBytes": 3400146,
           "playable": "/lab/play/cruiser-reloaded/codex-gpt-5.6-sol-2026-07-21/index.html",
           "shots": [
             "shots/cruiser-reloaded/codex-gpt-5.6-sol-2026-07-21/00-title.webp",
             "shots/cruiser-reloaded/codex-gpt-5.6-sol-2026-07-21/02-mid.webp"
           ],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
-          "slug": "codex-gpt-6-sol-2026-09-22",
+          "slug": "codex-gpt-5.6-terra-2026-07-21",
           "agent": "codex",
-          "model": "gpt-6-sol",
+          "model": "gpt-5.6-terra",
           "reasoning": "high",
-          "ranAt": "2026-09-22T21:15:32.274Z",
-          "total": 70,
+          "ranAt": "2026-07-21T14:19:36.775Z",
+          "total": 72,
           "band": "partial",
           "gatePassed": true,
           "gateFailedAt": null,
@@ -2996,7 +3037,167 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 52ms, 59fps median"
+              "rationale": "no console errors, first frame in 42ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2,
+              "rationale": "13 distinct sprite sources, 39 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 4,
+              "rationale": "66 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3,
+              "rationale": "3 modules, largest file 59 lines, untyped, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "2430 byte README, 7 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.06,
+              "status": "info",
+              "detail": "161.4 → 170.4 draws per frame over 20s of one run"
+            }
+          ],
+          "buildBytes": 3937391,
+          "playable": "/lab/play/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/00-title.webp",
+            "shots/cruiser-reloaded/codex-gpt-5.6-terra-2026-07-21/02-mid.webp"
+          ],
+          "durationMs": null,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "cursor-muse-spark-1.3-xhigh-2026-09-15",
+          "agent": "cursor",
+          "model": "muse-spark-1.3-xhigh",
+          "reasoning": "default",
+          "ranAt": "2026-09-15T16:46:30.316Z",
+          "total": 72,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 45ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "input reaches a handler, no score change observed, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 3,
+              "rationale": "21 distinct sprite sources, 53 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 4,
+              "rationale": "65 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 2.5,
+              "rationale": "5 modules, largest file 1967 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "6038 byte README, 6 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.96,
+              "status": "info",
+              "detail": "222.2 → 212.5 draws per frame over 259s of one run"
+            }
+          ],
+          "buildBytes": 9838794,
+          "playable": "/lab/play/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/00-title.webp",
+            "shots/cruiser-reloaded/cursor-muse-spark-1.3-xhigh-2026-09-15/02-mid.webp"
+          ],
+          "durationMs": 560569,
+          "tokens": null,
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "codex-gpt-6-sol-2026-09-22",
+          "agent": "codex",
+          "model": "gpt-6-sol",
+          "reasoning": "high",
+          "ranAt": "2026-09-22T21:15:32.274Z",
+          "total": 68,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 50ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3009,15 +3210,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 3.3,
-              "rationale": "26 distinct sprite sources, 54 distinct screens"
+              "score": 3.1,
+              "rationale": "24 distinct sprite sources, 51 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "15 of 93 original assets reused by name"
+              "rationale": "22 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3047,10 +3248,10 @@
               "label": "Late vs early draw calls",
               "value": 0.87,
               "status": "info",
-              "detail": "37.9 → 33.0 draws per frame over 245s of one run"
+              "detail": "34.4 → 30.0 draws per frame over 244s of one run"
             }
           ],
-          "buildBytes": 3268925,
+          "buildBytes": 3269402,
           "playable": "/lab/play/cruiser-reloaded/codex-gpt-6-sol-2026-09-22/index.html",
           "shots": [
             "shots/cruiser-reloaded/codex-gpt-6-sol-2026-09-22/00-title.webp",
@@ -3061,7 +3262,88 @@
             "input": 2720495,
             "cachedInput": 2625024,
             "output": 43461
-          }
+          },
+          "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "antigravity-gemini-3.8-flash-high-2026-09-15",
+          "agent": "antigravity",
+          "model": "gemini-3.8-flash-high",
+          "reasoning": "high",
+          "ranAt": "2026-09-15T15:48:53.410Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": null,
+          "tokens": null,
+          "total": 66,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 1,
+              "rationale": "2 uncaught exceptions, no console errors, first frame in 65ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 3.4,
+              "rationale": "34 distinct sprite sources, 41 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 5,
+              "rationale": "93 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "21 modules, largest file 925 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 0,
+              "rationale": "no usable README"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": true,
+              "status": "pass",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.04,
+              "status": "info",
+              "detail": "166.8 → 173.6 draws per frame over 16s of one run"
+            }
+          ],
+          "buildBytes": 20807773,
+          "playable": "/lab/play/cruiser-reloaded/antigravity-gemini-3.8-flash-high-2026-09-15/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/antigravity-gemini-3.8-flash-high-2026-09-15/00-title.webp",
+            "shots/cruiser-reloaded/antigravity-gemini-3.8-flash-high-2026-09-15/02-mid.webp"
+          ]
         },
         {
           "slug": "claude-claude-opus-5-5-1m-2026-09-22",
@@ -3079,7 +3361,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 45ms, 59fps median"
+              "rationale": "no console errors, first frame in 60ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3100,7 +3382,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "14 of 93 original assets reused by name"
+              "rationale": "14 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3130,7 +3412,7 @@
               "label": "Late vs early draw calls",
               "value": 1,
               "status": "info",
-              "detail": "103.4 → 103.8 draws per frame over 259s of one run"
+              "detail": "103.5 → 103.9 draws per frame over 259s of one run"
             }
           ],
           "buildBytes": 6873392,
@@ -3144,7 +3426,8 @@
             "input": 15274192,
             "cachedInput": 14992248,
             "output": 193502
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "openrouter-z-ai-glm-5.3-flash-2026-08-28",
@@ -3162,7 +3445,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 0,
-              "rationale": "2 uncaught exceptions, 6 console errors, first frame in 1188ms, 59fps median"
+              "rationale": "2 uncaught exceptions, 6 console errors, first frame in 455ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3183,7 +3466,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "23 of 93 original assets reused by name"
+              "rationale": "23 of 93 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3223,7 +3506,8 @@
             "shots/cruiser-reloaded/openrouter-z-ai-glm-5.3-flash-2026-08-28/02-mid.webp"
           ],
           "durationMs": 985498,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-sonnet-2026-07-10",
@@ -3284,7 +3568,8 @@
           "playable": null,
           "shots": [],
           "durationMs": null,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         }
       ]
     },
@@ -3295,7 +3580,7 @@
       "category": "JS / games / 3D / modeling / game-design",
       "difficulty": "hard",
       "rubricId": "web-arcade-v1",
-      "scorerVersion": "2.2.0",
+      "scorerVersion": "2.3.0",
       "runs": [
         {
           "slug": "claude-claude-sonnet-5-5-2026-09-29",
@@ -3313,7 +3598,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 108ms, 59fps median"
+              "rationale": "no console errors, first frame in 133ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3327,14 +3612,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.8,
-              "rationale": "4 distinct sprite sources, 104 distinct screens"
+              "rationale": "4 distinct sprite sources, 100 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "7 of 113 original assets reused by name"
+              "rationale": "7 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3362,9 +3647,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.94,
+              "value": 0.92,
               "status": "info",
-              "detail": "102.2 → 96.1 draws per frame over 232s of one run"
+              "detail": "104.4 → 96.5 draws per frame over 245s of one run"
             }
           ],
           "buildBytes": 6478377,
@@ -3378,7 +3663,8 @@
             "input": 249720587,
             "cachedInput": 247911992,
             "output": 1008092
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6-astra-2026-09-09",
@@ -3396,7 +3682,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 320ms, 59fps median"
+              "rationale": "no console errors, first frame in 128ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3410,14 +3696,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.5,
-              "rationale": "0 distinct sprite sources, 89 distinct screens"
+              "rationale": "0 distinct sprite sources, 93 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "2 of 113 original assets reused by name"
+              "rationale": "4 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3445,9 +3731,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.88,
+              "value": 0.54,
               "status": "info",
-              "detail": "62.5 → 55.1 draws per frame over 236s of one run"
+              "detail": "106.7 → 58.0 draws per frame over 231s of one run"
             }
           ],
           "buildBytes": 1521849,
@@ -3457,7 +3743,8 @@
             "shots/void-cruiser-3d/codex-gpt-6-astra-2026-09-09/02-mid.webp"
           ],
           "durationMs": 1816069,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-opus-5-5-1m-2026-09-22",
@@ -3475,7 +3762,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 83ms, 59fps median"
+              "rationale": "no console errors, first frame in 85ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3489,14 +3776,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.5,
-              "rationale": "5 distinct sprite sources, 71 distinct screens"
+              "rationale": "5 distinct sprite sources, 69 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "16 of 113 original assets reused by name"
+              "rationale": "16 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3524,9 +3811,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.41,
+              "value": 0.39,
               "status": "info",
-              "detail": "210.8 → 86.8 draws per frame over 238s of one run"
+              "detail": "220.7 → 86.1 draws per frame over 234s of one run"
             }
           ],
           "buildBytes": 6292433,
@@ -3540,7 +3827,8 @@
             "input": 30385235,
             "cachedInput": 29948994,
             "output": 245869
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6.1-sol-2026-09-29",
@@ -3559,7 +3847,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 91ms, 59fps median"
+              "rationale": "no console errors, first frame in 82ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3573,14 +3861,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.3,
-              "rationale": "0 distinct sprite sources, 74 distinct screens"
+              "rationale": "0 distinct sprite sources, 75 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "2 of 113 original assets reused by name"
+              "rationale": "7 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3608,9 +3896,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 0.83,
+              "value": 0.66,
               "status": "info",
-              "detail": "177.3 → 147.3 draws per frame over 244s of one run"
+              "detail": "175.6 → 116.1 draws per frame over 245s of one run"
             }
           ],
           "buildBytes": 2846429,
@@ -3623,7 +3911,8 @@
             "input": 7440280,
             "cachedInput": 7060608,
             "output": 92571
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "claude-claude-fable-5-1-1m-2026-09-09",
@@ -3641,7 +3930,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 355ms, 59fps median"
+              "rationale": "no console errors, first frame in 179ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3655,14 +3944,14 @@
               "label": "Systems depth",
               "weight": 4,
               "score": 2.2,
-              "rationale": "2 distinct sprite sources, 66 distinct screens"
+              "rationale": "2 distinct sprite sources, 65 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "11 of 113 original assets reused by name"
+              "rationale": "18 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3690,9 +3979,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.25,
+              "value": 1.53,
               "status": "info",
-              "detail": "82.1 → 102.6 draws per frame over 247s of one run"
+              "detail": "96.2 → 147.1 draws per frame over 255s of one run"
             }
           ],
           "buildBytes": 3768090,
@@ -3702,7 +3991,8 @@
             "shots/void-cruiser-3d/claude-claude-fable-5-1-1m-2026-09-09/02-mid.webp"
           ],
           "durationMs": 2243989,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6-sol-2026-09-22",
@@ -3720,7 +4010,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 95ms, 59fps median"
+              "rationale": "no console errors, first frame in 90ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3741,7 +4031,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "6 of 113 original assets reused by name"
+              "rationale": "10 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3769,9 +4059,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1.09,
+              "value": 0.93,
               "status": "info",
-              "detail": "121.6 → 133.0 draws per frame over 243s of one run"
+              "detail": "120.5 → 112.1 draws per frame over 243s of one run"
             }
           ],
           "buildBytes": 2872497,
@@ -3785,7 +4075,8 @@
             "input": 4279017,
             "cachedInput": 4178944,
             "output": 50070
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "openrouter-stealth-union-alpha-2026-09-17",
@@ -3803,7 +4094,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 187ms, 59fps median"
+              "rationale": "no console errors, first frame in 98ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3816,15 +4107,15 @@
               "id": "depth",
               "label": "Systems depth",
               "weight": 4,
-              "score": 1.2,
-              "rationale": "0 distinct sprite sources, 39 distinct screens"
+              "score": 1.3,
+              "rationale": "0 distinct sprite sources, 40 distinct screens"
             },
             {
               "id": "assets",
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "10 of 113 original assets reused by name"
+              "rationale": "10 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3852,9 +4143,9 @@
             {
               "id": "depth.spawnRateDelta",
               "label": "Late vs early draw calls",
-              "value": 1,
+              "value": 1.08,
               "status": "info",
-              "detail": "84.3 → 84.0 draws per frame over 243s of one run"
+              "detail": "110.8 → 120.0 draws per frame over 243s of one run"
             }
           ],
           "buildBytes": 1034115,
@@ -3868,7 +4159,8 @@
             "input": 3728844,
             "cachedInput": 3150984,
             "output": 61375
-          }
+          },
+          "scorerVersion": "2.3.0"
         },
         {
           "slug": "codex-gpt-6-astra-2026-09-10",
@@ -3886,7 +4178,7 @@
               "label": "Runtime health",
               "weight": 2,
               "score": 5,
-              "rationale": "no console errors, first frame in 233ms, 59fps median"
+              "rationale": "no console errors, first frame in 155ms, 59fps median"
             },
             {
               "id": "loop",
@@ -3907,7 +4199,7 @@
               "label": "Asset lineage",
               "weight": 2,
               "score": 2,
-              "rationale": "3 of 113 original assets reused by name"
+              "rationale": "6 of 113 original assets reused by name or content"
             },
             {
               "id": "code",
@@ -3937,7 +4229,7 @@
               "label": "Late vs early draw calls",
               "value": 1,
               "status": "info",
-              "detail": "67.7 → 67.6 draws per frame over 258s of one run"
+              "detail": "67.6 → 67.5 draws per frame over 259s of one run"
             }
           ],
           "buildBytes": 2640271,
@@ -3947,7 +4239,8 @@
             "shots/void-cruiser-3d/codex-gpt-6-astra-2026-09-10/02-mid.webp"
           ],
           "durationMs": 2619135,
-          "tokens": null
+          "tokens": null,
+          "scorerVersion": "2.3.0"
         }
       ]
     }
