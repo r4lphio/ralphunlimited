@@ -3,7 +3,7 @@
  * A maker's workshop with warmth and craft
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&family=Libre+Franklin:wght@400;500;600;700&display=swap');
+@import './fonts.css';
 
 :root {
   /* Core palette - warm dark with amber glow */
