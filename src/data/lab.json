@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-10T15:34:10.971Z",
+  "generatedAt": "2026-11-10T17:46:28.479Z",
   "benchmarks": [
     {
       "id": "retro-cruiser",
@@ -1877,6 +1877,90 @@
           "durationMs": 716039,
           "tokens": null,
           "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "openrouter-meta-muse-ember-2026-11-10",
+          "agent": "openrouter",
+          "model": "meta-muse-ember",
+          "reasoning": "high",
+          "ranAt": "2026-11-10T17:40:13.384Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 64233,
+          "tokens": {
+            "input": 419934,
+            "cachedInput": 361188,
+            "output": 13824
+          },
+          "total": 37,
+          "band": "thin",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 183ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 0,
+              "rationale": "no working start affordance found, gameplay never measured"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 0.5,
+              "rationale": "0 distinct sprite sources, 17 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 0,
+              "rationale": "0 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 3.5,
+              "rationale": "5 modules, largest file 322 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "1684 byte README, 6 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": null,
+              "status": "skipped",
+              "detail": "game never started"
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1,
+              "status": "info",
+              "detail": "260.9 → 261.0 draws per frame over 258s of one run"
+            }
+          ],
+          "buildBytes": 18948,
+          "playable": "/lab/play/voidbreaker/openrouter-meta-muse-ember-2026-11-10/index.html",
+          "shots": [
+            "shots/voidbreaker/openrouter-meta-muse-ember-2026-11-10/00-title.webp",
+            "shots/voidbreaker/openrouter-meta-muse-ember-2026-11-10/02-mid.webp"
+          ]
         }
       ]
     },
@@ -3348,6 +3432,90 @@
           "durationMs": 560569,
           "tokens": null,
           "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "openrouter-meta-muse-ember-2026-11-10",
+          "agent": "openrouter",
+          "model": "meta-muse-ember",
+          "reasoning": "high",
+          "ranAt": "2026-11-10T17:05:20.186Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 230584,
+          "tokens": {
+            "input": 2372368,
+            "cachedInput": 2281456,
+            "output": 30082
+          },
+          "total": 70,
+          "band": "partial",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 3144ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2.4,
+              "rationale": "22 distinct sprite sources, 32 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "34 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 2.5,
+              "rationale": "5 modules, largest file 633 lines, typed, no tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "3480 byte README, 7 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.19,
+              "status": "info",
+              "detail": "106.8 → 127.5 draws per frame over 60s of one run"
+            }
+          ],
+          "buildBytes": 3859125,
+          "playable": "/lab/play/cruiser-reloaded/openrouter-meta-muse-ember-2026-11-10/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/openrouter-meta-muse-ember-2026-11-10/00-title.webp",
+            "shots/cruiser-reloaded/openrouter-meta-muse-ember-2026-11-10/02-mid.webp"
+          ]
         },
         {
           "slug": "codex-gpt-6-sol-2026-09-22",

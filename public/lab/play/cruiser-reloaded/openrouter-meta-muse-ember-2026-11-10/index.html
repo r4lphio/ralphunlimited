@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Cruiser Reloaded</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🚀</text></svg>" />
+  <style>@font-face { font-family: 'Press Start'; src: url('assets/fonts/PressStart2P.ttf') format('truetype'); }</style>
+    <script type="module" crossorigin src="./assets/index-DNKCQKPl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BEqx0ewk.css">
+  </head>
+<body>
+  <div id="wrap">
+    <canvas id="game" width="960" height="540"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="bar-row"><span class="bar-label">HULL</span><div class="bar"><div id="hull-bar"></div></div></div>
+        <div class="bar-row"><span class="bar-label">FUEL</span><div class="bar fuel"><div id="fuel-bar"></div></div></div>
+        <div id="shield-row" class="bar-row hidden"><span class="bar-label">SHLD</span><div class="bar shield"><div id="shield-bar"></div></div></div>
+      </div>
+      <div class="hud-right">
+        <div id="score">0</div>
+        <div id="chain" class="hidden">CHAIN x1</div>
+        <div id="sector">SECTOR 1</div>
+        <div id="scrap">⬡ 0</div>
+        <div id="weapon">WPN 1</div>
+      </div>
+      <div id="boss-bar" class="hidden"><span>DREADNOUGHT</span><div class="bar boss"><div id="boss-fill"></div></div></div>
+    </div>
+
+    <div id="banner" class="hidden"></div>
+    <div id="hint">WASD / Arrows move · SPACE fire · SHIFT boost · P pause</div>
+
+    <section id="screen-title" class="screen">
+      <h1>CRUISER<br/><span>RELOADED</span></h1>
+      <p class="tagline">Run the debris field. Bank the scrap. Outrun the dreadnought.</p>
+      <div class="btn-row">
+        <button id="btn-launch" class="primary">▶ LAUNCH</button>
+        <button id="btn-hangar">HANGAR</button>
+        <button id="btn-how">HOW TO PLAY</button>
+        <button id="btn-mute">SOUND: ON</button>
+      </div>
+      <p id="best-line" class="best"></p>
+    </section>
+
+    <section id="screen-hangar" class="screen hidden">
+      <h2>HANGAR</h2>
+      <p class="tagline">Spend banked scrap on permanent loadouts. <b id="bank-line"></b></p>
+      <div id="unlock-list"></div>
+      <div class="btn-row"><button id="btn-hangar-back">← BACK</button></div>
+    </section>
+
+    <section id="screen-how" class="screen hidden">
+      <h2>HOW TO PLAY</h2>
+      <div class="how-grid">
+        <p><b>Move</b> WASD / arrows / drag. <b>Fire</b> SPACE or auto on touch. <b>Boost</b> SHIFT (burns fuel, big magnet).</p>
+        <p><b>Hull + Fuel:</b> fuel drains as you fly. At zero fuel your engine sputters and the hull burns. Grab fuel cans.</p>
+        <p><b>Chain:</b> fast kills raise your score chain to x8. Taking a hit resets it. Greed pays.</p>
+        <p><b>Sectors:</b> survive each sector, kill the dreadnought, pick 1 of 3 upgrades. Scrap buys permanent hangar loadouts.</p>
+      </div>
+      <div class="btn-row"><button id="btn-how-back">← BACK</button></div>
+    </section>
+
+    <section id="screen-pause" class="screen hidden">
+      <h2>PAUSED</h2>
+      <div class="btn-row">
+        <button id="btn-resume" class="primary">RESUME</button>
+        <button id="btn-quit">ABANDON RUN</button>
+      </div>
+    </section>
+
+    <section id="screen-upgrade" class="screen hidden">
+      <h2>SECTOR CLEAR — CHOOSE AN UPGRADE</h2>
+      <div id="upgrade-cards" class="cards"></div>
+    </section>
+
+    <section id="screen-over" class="screen hidden">
+      <h2 id="over-title">SHIP LOST</h2>
+      <div id="over-stats" class="stats"></div>
+      <div class="btn-row">
+        <button id="btn-retry" class="primary">↻ FLY AGAIN</button>
+        <button id="btn-over-title">TITLE</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

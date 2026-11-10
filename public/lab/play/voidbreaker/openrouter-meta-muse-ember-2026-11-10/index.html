@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Voidbreaker</title>
+<style>
+:root{--cyan:#57f4ff;--mag:#ff4fd8;--bg:#040710}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:#e8f6ff;font-family:system-ui,Arial,sans-serif;overflow:hidden}
+canvas{display:block}
+#ui{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5}
+.panel{pointer-events:auto;background:rgba(6,14,28,.88);border:1px solid #1e4b63;border-radius:16px;padding:28px 32px;max-width:640px;width:min(92vw,640px);box-shadow:0 0 60px rgba(87,244,255,.15)}
+h1{margin:0;font-size:44px;letter-spacing:.12em;color:var(--cyan);text-shadow:0 0 18px rgba(87,244,255,.7)}
+h2{color:var(--cyan);letter-spacing:.08em}
+button{pointer-events:auto;background:#0b2a3a;color:#dff9ff;border:1px solid var(--cyan);border-radius:10px;padding:12px 22px;font-size:16px;cursor:pointer;margin:6px}
+button:hover{background:#12455e}
+button:disabled{opacity:.4;cursor:not-allowed}
+.keys{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;font-size:14px;opacity:.92}
+.shipRow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.shipCard{flex:1;min-width:150px;border:1px solid #275a70;border-radius:10px;padding:10px;background:#081624;text-align:left;color:#dff9ff}
+.shipCard.sel{border-color:var(--cyan);box-shadow:0 0 14px rgba(87,244,255,.4)}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:4;font-variant-numeric:tabular-nums}
+.bar{height:10px;background:#0b2233;border:1px solid #1e4b63;border-radius:6px;overflow:hidden}
+.bar>i{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--mag))}
+.upg{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.upg button{flex:1;min-width:150px;text-align:left}
+small{opacity:.75}
+</style>  <script type="module" crossorigin src="./assets/index-xy-nqry9.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hud"></div><div id="ui"></div>
+</body></html>
