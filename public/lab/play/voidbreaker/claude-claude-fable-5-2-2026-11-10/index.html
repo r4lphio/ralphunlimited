@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Voidbreaker: an arcade roguelite about breaking asteroids, banking scrap, and keeping your chain alive." />
+    <meta name="theme-color" content="#05040d" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2305040d'/%3E%3Cpath d='M16 4l9 22-9-5-9 5z' fill='%23ffb347'/%3E%3C/svg%3E" />
+    <title>Voidbreaker</title>
+    <script type="module" crossorigin src="./assets/index-CsZfnqHL.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CugKKbR8.css">
+  </head>
+  <body>
+    <main id="stage" data-phase="title">
+      <canvas id="game" aria-label="Voidbreaker play field"></canvas>
+
+      <div id="hud" hidden>
+        <div class="hud-score">
+          <div id="hud-score" class="score">0</div>
+          <div class="chain">
+            <span id="hud-mult" data-tier="1">x1.0</span>
+            <div class="bar"><i id="hud-chain"></i></div>
+            <span class="label">CHAIN</span>
+          </div>
+        </div>
+        <div class="hud-wave">
+          <div id="hud-wave">WAVE 1</div>
+          <div id="hud-sector"></div>
+        </div>
+        <div class="hud-ship">
+          <div id="hud-hull" class="pips" aria-label="Hull"></div>
+          <div id="hud-nova-box" class="nova">
+            <span class="label">NOVA <kbd>E</kbd></span>
+            <div class="bar"><i id="hud-nova"></i></div>
+          </div>
+        </div>
+        <div class="hud-level">
+          <div id="hud-mods" class="mods"></div>
+          <div class="xp">
+            <span id="hud-level">LV 1</span>
+            <div class="bar"><i id="hud-xp"></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tip" role="status"></div>
+      <div id="toasts" aria-live="polite"></div>
+      <div id="overlay" hidden></div>
+      <div id="loading">Loading Voidbreaker</div>
+    </main>
+  </body>
+</html>
