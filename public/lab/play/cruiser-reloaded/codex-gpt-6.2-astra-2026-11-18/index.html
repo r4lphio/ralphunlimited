@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b14" />
+    <meta
+      name="description"
+      content="Pilot a salvage cruiser through three sectors of hostile space. An arcade shooter with local flight records."
+    />
+    <link rel="icon" type="image/svg+xml" href="./mark.svg" />
+    <title>Cruiser Reloaded | Orbit Arcade</title>
+    <script type="module" crossorigin src="./assets/index-Dl6BEjyp.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B5Mu7eUu.css">
+  </head>
+  <body>
+    <header class="mast">
+      <div class="wrap mast-inner">
+        <div class="brand">
+          <img src="./mark.svg" alt="" width="40" height="35" /><span
+            >ORBIT<span class="brand-light"> ARCADE</span></span
+          >
+        </div>
+        <div class="system-tools">
+          <button id="sound" title="Toggle sound (M)" aria-pressed="true"></button>
+          <span class="tool-divider"></span>
+          <button id="fullscreen" title="Toggle fullscreen">
+            <i data-icon="expand"></i><span>Fullscreen</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap">
+      <div class="cabinet-line">
+        <span><i class="lamp violet"></i> ARCADE CABINET <b>/</b> <strong>CR-01</strong></span
+        ><span class="online"><i class="lamp green"></i> SYSTEM ONLINE</span>
+      </div>
+      <section id="cabinet" class="cabinet" aria-label="Cruiser Reloaded arcade cabinet">
+        <div id="screen" class="screen">
+          <div class="cover"></div>
+          <canvas id="game" aria-label="Cruiser flight area"></canvas>
+          <div class="glass" aria-hidden="true"></div>
+          <section id="hangar" class="hangar">
+            <div class="genre"><span class="speed-bars"></span> SPACE SHOOTER</div>
+            <h1>
+              <span class="wordmark" aria-hidden="true"></span><span class="sr-only">Cruiser </span
+              ><span class="subtitle">RELOADED</span>
+            </h1>
+            <p class="lead">Cut through the belt. Collect scrap.<br />Make it back in one piece.</p>
+            <div class="launch-row">
+              <button class="primary" id="launch"><i data-icon="play"></i>Launch run <kbd>↵</kbd></button>
+              <button class="manual-link" id="manual"><i data-icon="book"></i>Flight manual</button>
+            </div>
+          </section>
+          <div id="hud" hidden>
+            <div class="hud-left">
+              <div class="meter">
+                <span>HULL</span>
+                <div class="track"><i id="hull"></i></div>
+                <small id="hull-value">4/4</small>
+              </div>
+              <div class="meter">
+                <span>FUEL</span>
+                <div class="track"><i id="fuel"></i></div>
+                <small id="fuel-value">100%</small>
+              </div>
+            </div>
+            <div class="score-block">
+              <small>SCORE</small><b id="points">000000</b>
+              <div class="combo"><span id="chain">×1</span><i id="combo-bar"></i></div>
+            </div>
+            <button id="pause" aria-label="Pause game" title="Pause (P)"><i data-icon="pause"></i></button>
+          </div>
+          <div
+            id="modal"
+            class="modal"
+            hidden
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="dialog-title"
+          >
+            <div id="dialog" class="dialog"></div>
+          </div>
+        </div>
+        <div class="screen-foot">
+          <div class="sector-readout">
+            <i data-icon="radar"></i><span id="sector-id">SECTOR 01</span><b>/</b
+            ><strong id="sector-name">The Outer Belt</strong>
+          </div>
+          <span class="signal"><span id="signal-label">STANDBY</span><i class="signal-bars"></i></span>
+        </div>
+      </section>
+      <div id="touch-tools" hidden>
+        <span>Drag to steer & fire</span
+        ><button id="touch-boost"><i data-icon="bolt"></i> Overdrive</button>
+      </div>
+      <div class="deck">
+        <section class="card controls">
+          <h2><i data-icon="gamepad"></i>Flight controls</h2>
+          <div class="control-grid">
+            <div>
+              <div class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></div>
+              <span>Move</span>
+            </div>
+            <div>
+              <div class="keys"><kbd>SPACE</kbd></div>
+              <span>Fire</span>
+            </div>
+            <div>
+              <div class="keys"><kbd>SHIFT</kbd></div>
+              <span>Overdrive</span>
+            </div>
+            <div>
+              <div class="keys"><kbd>P</kbd></div>
+              <span>Pause</span>
+            </div>
+          </div>
+        </section>
+        <section class="card records">
+          <div class="card-heading">
+            <h2><i data-icon="trophy"></i>Pilot record</h2>
+            <button class="log-link" id="log">Flight log <i data-icon="arrow"></i></button>
+          </div>
+          <div class="record-grid">
+            <div><strong class="best" id="best">000000</strong><span>High score</span></div>
+            <div><strong id="runs">00</strong><span>Runs flown</span></div>
+            <div><strong id="deepest">--</strong><span>Best sector</span></div>
+          </div>
+        </section>
+      </div>
+      <footer>
+        <span class="footer-mark"><span class="mini-bars"></span> ORBIT ARCADE</span
+        ><span>CRUISER RELOADED <b>//</b> V1.0</span>
+      </footer>
+    </main>
+  </body>
+</html>

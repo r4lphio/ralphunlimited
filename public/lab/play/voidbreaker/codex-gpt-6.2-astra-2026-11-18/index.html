@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="theme-color" content="#101617" />
+    <meta
+      name="description"
+      content="Fly a salvage interceptor into the Shatter Belt. Break asteroids, chase live cores and beat your best flight."
+    />
+    <link rel="icon" href="./mark.svg" />
+    <title>Voidbreaker | Vector Arcade</title>
+    <script type="module" crossorigin src="./assets/index-DOX2xJTq.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CUyOeO25.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header>
+        <a class="brand" href="./" aria-label="Vector Arcade flight deck"
+          ><img src="./mark.svg" alt="" />VECTOR<span>ARCADE</span></a
+        >
+        <div class="utility">
+          <button id="sound" aria-label="Toggle sound"></button><span class="separator"></span
+          ><button id="fullscreen" aria-label="Enter fullscreen" title="Fullscreen"></button>
+        </div>
+      </header>
+      <main>
+        <div class="deck-label">
+          <span><b class="signal"></b><b id="deck-status">FLIGHT DECK</b></span
+          ><i></i><span class="deck-code">VB–01&nbsp; / &nbsp;ARCADE SYSTEM</span>
+        </div>
+        <section class="stage" id="stage" aria-label="Voidbreaker arcade">
+          <div id="cover">
+            <div class="cover-content">
+              <div class="kicker"><i></i> ASTEROID SURVIVAL</div>
+              <h1><span>VOID</span><span>BREAKER</span></h1>
+              <p>Shatter asteroids. Salvage live cores.<br />Refit your ship and push deeper.</p>
+              <div class="launch-line">
+                <button class="primary" data-action="start">
+                  <span class="play"></span>Launch run <kbd>ENTER</kbd>
+                </button>
+              </div>
+            </div>
+            <div class="art-caption"><i></i>FIG. 01 &nbsp;/&nbsp; BELT INTERCEPTOR</div>
+          </div>
+          <canvas id="arena" aria-label="Asteroid belt playfield" hidden></canvas>
+          <div id="hud" hidden></div>
+          <div id="touch-controls" hidden><button data-action="dash">DASH</button></div>
+          <div id="overlay" hidden></div>
+          <div class="corner tl"></div>
+          <div class="corner tr"></div>
+          <div class="corner bl"></div>
+          <div class="corner br"></div>
+        </section>
+        <section class="dashboard" aria-label="Pilot records">
+          <div class="stat">
+            <span class="stat-icon" id="trophy-icon"></span>
+            <div><small>Personal best</small><strong id="best">000000</strong></div>
+          </div>
+          <div class="stat">
+            <span class="stat-icon" id="planet-icon"></span>
+            <div>
+              <small>Deepest sector</small><strong id="deep">00 <em>/ SECTORS</em></strong>
+            </div>
+          </div>
+          <button class="log-link" data-action="log">
+            <span id="log-icon"></span> Flight log <b>↗</b>
+          </button>
+        </section>
+        <section class="controls" aria-label="Flight controls">
+          <div class="controls-name"><span id="controller-icon"></span> Flight controls</div>
+          <div class="bindings">
+            <span><kbd>WASD</kbd> Move</span><span><i id="mouse-icon"></i> Aim / Fire</span
+            ><span><kbd>SPACE</kbd> Dash</span><span><kbd>ESC</kbd> Pause</span>
+          </div>
+          <button class="manual-link" data-action="manual" aria-label="Open flight manual">
+            Manual <b>↗</b>
+          </button>
+        </section>
+      </main>
+      <footer>
+        <span class="ready"><i></i> <span id="status-text">SYSTEM READY</span></span
+        ><span class="footer-rule"></span><span>VECTOR ARCADE <b>//</b> VOL. 01</span>
+      </footer>
+    </div>
+  </body>
+</html>
