@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100c19">
+  <meta name="description" content="Fly the wreck belt, strip it for salvage, and take on the Warden in this arcade space shooter.">
+  <title>Cruiser Reloaded</title>
+  <script type="module" crossorigin src="./assets/index-Tn_8kZKG.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BlKBCFGz.css">
+</head>
+<body>
+  <div class="terminal">
+    <header class="topbar">
+      <div class="identity">
+        <span class="insignia" aria-hidden="true"><span></span></span>
+        <div><strong>Cruiser Reloaded</strong><span>Flight terminal</span></div>
+      </div>
+      <nav class="top-actions" aria-label="Cabinet controls">
+        <button type="button" class="quiet" data-action="manual"><span class="manual-icon" aria-hidden="true">?</span> Flight manual</button>
+        <button type="button" class="quiet sound-button" data-action="sound" aria-pressed="false"><span class="sound-icon" aria-hidden="true"></span><span id="sound-label">Sound on</span></button>
+      </nav>
+    </header>
+
+    <main class="cabinet" aria-label="Cruiser Reloaded arcade cabinet">
+      <section id="field" class="field" data-mode="title" aria-label="Flight deck">
+        <canvas id="space" width="1200" height="560" aria-label="Cruiser flight field"></canvas>
+        <div class="glass" aria-hidden="true"></div>
+        <div class="corner top-left" aria-hidden="true"></div><div class="corner top-right" aria-hidden="true"></div>
+        <div class="corner bottom-left" aria-hidden="true"></div><div class="corner bottom-right" aria-hidden="true"></div>
+
+        <section id="title-screen" class="title-screen" aria-labelledby="game-title">
+          <div class="intro">
+            <div class="locator"><span aria-hidden="true"></span> The debris belt</div>
+            <h1 id="game-title"><span>Cruiser</span><span>Reloaded</span></h1>
+            <p>Fly the wreck belt. Shoot a path through the debris and get close enough to strip it for salvage.</p>
+            <div class="actions">
+              <button type="button" class="primary launch" data-action="launch"><span class="play-icon" aria-hidden="true"></span> Launch run <kbd>↵</kbd></button>
+              <button type="button" class="secondary" data-action="hangar">Hangar <span class="arrow" aria-hidden="true">↗</span></button>
+            </div>
+          </div>
+          <div class="flight-id" aria-hidden="true">
+            <span class="data-cross">+</span><span>Active airframe<strong id="title-frame">Cruiser</strong></span>
+          </div>
+        </section>
+
+        <section id="hud" class="hud" aria-label="Flight instruments" hidden>
+          <div class="hud-score"><span class="instrument-label">Score</span><strong id="score">000000</strong></div>
+          <div class="gauges">
+            <div class="gauge hull"><div class="gauge-label"><span>Hull</span><strong id="hull-number">100</strong></div><div class="meter"><span id="hull-fill"></span></div></div>
+            <div class="gauge fuel"><div class="gauge-label"><span id="fuel-label">Fuel</span><strong id="fuel-number">100</strong></div><div class="meter"><span id="fuel-fill"></span></div></div>
+          </div>
+          <div class="hud-chain"><span class="instrument-label">Chain</span><strong id="chain-mult">×1</strong><div class="meter"><span id="chain-fill"></span></div></div>
+          <button type="button" class="pause-button" data-action="pause" aria-label="Pause flight"><span aria-hidden="true"></span></button>
+        </section>
+        <div id="warden-display" class="warden-display" hidden>
+          <span>Warden</span><div class="meter"><span id="warden-fill"></span></div><strong id="warden-number">100%</strong>
+        </div>
+        <div id="brief" class="brief" aria-hidden="true" hidden><span id="brief-title"></span><small id="brief-detail"></small></div>
+        <div id="flight-strip" class="flight-strip" hidden>
+          <div class="sector-readout"><span id="sector-label">01</span><div class="meter"><span id="sector-fill"></span></div><span id="sector-name"></span></div>
+          <div class="salvage-readout"><span class="diamond" aria-hidden="true"></span><span id="salvage-label">0 / 6 to module</span></div>
+        </div>
+        <div id="touch-controls" class="touch-controls" hidden>
+          <span>Drag to fly + fire</span><button type="button" id="touch-burn">Burn</button>
+        </div>
+
+        <section id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden></section>
+      </section>
+
+      <div class="console">
+        <div class="best">
+          <span class="record-icon" aria-hidden="true">✦</span>
+          <div><span class="instrument-label">Personal best</span><strong id="best-score">000000</strong></div>
+        </div>
+        <div class="key-guide" aria-label="Keyboard controls">
+          <span><kbd>WASD</kbd><span class="key-or">/</span><kbd>↑↓←→</kbd> Fly</span>
+          <span><kbd>Space</kbd> Fire</span>
+          <span><kbd>Shift</kbd> Overburn</span>
+        </div>
+        <button type="button" class="quiet log-button" data-action="log">Flight log <span class="arrow" aria-hidden="true">↗</span></button>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span><span class="online-dot" aria-hidden="true"></span> <span id="cabinet-status">Ready for launch</span></span>
+      <span>Local arcade <span class="footer-divider">/</span> Scores saved on this device</span>
+    </footer>
+  </div>
+</body>
+</html>
