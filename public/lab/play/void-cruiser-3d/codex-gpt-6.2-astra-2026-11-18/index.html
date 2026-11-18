@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b1013" />
+    <title>Void Cruiser 3D | The Cinder Belt</title>
+    <link rel="icon" href="./assets/insignia.svg" />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      { "imports": { "three": "./vendor/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <svg class="symbols" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <symbol id="brand" viewBox="0 0 40 36">
+          <path
+            fill="currentColor"
+            d="M1 4h8l10.9 18.7L31 4h8L20 36zM12 4h7l4.1 7-3.3 5.7zM23 4h5l-2.5 4.4z"
+          />
+        </symbol>
+        <symbol id="sound" viewBox="0 0 24 24">
+          <path d="M3 9h4l5-4v14l-5-4H3zM16 8q4 4 0 8m3-11q6 7 0 14" />
+        </symbol>
+        <symbol id="silent" viewBox="0 0 24 24"><path d="M3 9h4l5-4v14l-5-4H3zM16 9l6 6m0-6-6 6" /></symbol>
+        <symbol id="expand" viewBox="0 0 24 24"><path d="M3 9V3h6m6 0h6v6m0 6v6h-6m-6 0H3v-6" /></symbol>
+        <symbol id="book" viewBox="0 0 24 24">
+          <path d="M12 6Q7 3 3 5v14q4-2 9 1 5-3 9-1V5q-4-2-9 1zm0 0v14" />
+        </symbol>
+        <symbol id="cup" viewBox="0 0 24 24">
+          <path d="M7 3h10v6q0 6-5 6t-5-6zM7 5H3v2q0 5 5 5m9-7h4v2q0 5-5 5m-4 3v5m-5 1h10" />
+        </symbol>
+        <symbol id="reticle" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="7" />
+          <path d="M12 1v6m0 10v6M1 12h6m10 0h6" />
+        </symbol>
+        <symbol id="pauseIcon" viewBox="0 0 24 24"><path d="M8 4v16m8-16v16" stroke-width="4" /></symbol>
+      </defs>
+    </svg>
+    <header>
+      <div class="wordmark">
+        <svg class="logo"><use href="#brand" /></svg><b>VOID CRUISER</b><span>ARCADE SYSTEMS</span>
+      </div>
+      <div class="header-actions">
+        <span class="connection"><i></i><span id="online">SYSTEM ONLINE</span></span>
+        <button class="icon" id="pause" hidden aria-label="Pause game" title="Pause (P)">
+          <svg><use href="#pauseIcon" /></svg>
+        </button>
+        <button class="icon" id="audio" aria-label="Mute audio" title="Mute (M)">
+          <svg><use href="#sound" /></svg>
+        </button>
+        <button class="icon" id="fullscreen" aria-label="Toggle fullscreen" title="Fullscreen">
+          <svg><use href="#expand" /></svg>
+        </button>
+      </div>
+    </header>
+    <main>
+      <section id="stage" aria-label="Space flight display">
+        <div id="space"></div>
+        <div class="shade"></div>
+        <div class="corners"><i></i><i></i><i></i><i></i></div>
+        <div class="launch-mark">
+          <span class="signal"><i></i><i></i><i></i><i></i></span> FLIGHT DECK <em>/</em> STANDBY
+        </div>
+        <div class="coord"><b>SECTOR 07</b><span>CINDER BELT</span></div>
+        <div id="intro">
+          <div class="eyeline"><span></span> 3D ARCADE SHOOTER</div>
+          <h1>VOID<br />CRUISER<span class="dimtag">3D</span></h1>
+          <div class="mission-name"><i></i> THE CINDER BELT</div>
+          <p>Shatter the belt. Outfly the drones.<br />Burn hard for the extraction gate.</p>
+          <button class="primary" id="launch">
+            <span class="play-triangle"></span> LAUNCH RUN <kbd>ENTER</kbd>
+          </button>
+          <button class="manual" id="manual">
+            <svg><use href="#book" /></svg> Flight manual
+          </button>
+        </div>
+        <div class="ship-tag">
+          <i></i><span>VC-09 <b>/</b> STRIKE CRUISER</span>
+        </div>
+        <div id="hud" hidden>
+          <div class="hud-left">
+            <small id="sector"></small><strong id="score"></strong><b id="combo"></b>
+          </div>
+          <div class="hud-right">
+            <small>EXTRACTION</small><strong id="distance"></strong>
+            <div class="progress"><i id="progress"></i></div>
+          </div>
+          <div class="meters">
+            <div>
+              <label>HULL <b id="hval"></b></label>
+              <div class="bar"><i id="hull"></i></div>
+            </div>
+            <div>
+              <label>FUEL <b id="fval"></b></label>
+              <div class="bar"><i id="fuel"></i></div>
+            </div>
+          </div>
+          <div class="weapon"><small>WEAPON SYSTEM</small><strong id="weapon"></strong></div>
+          <div id="notice"></div>
+          <div id="hazard" hidden><i></i>IMPACT</div>
+          <div id="prize" hidden></div>
+          <div id="aim"><i></i></div>
+        </div>
+        <div id="effects"></div>
+        <div id="flash"></div>
+        <section id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="modal-card">
+            <div class="eyeline" id="modal-kicker"></div>
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+            <div id="modal-actions"></div>
+          </div>
+        </section>
+      </section>
+      <section class="deck">
+        <div class="controls-strip">
+          <div class="deck-title">
+            <svg><use href="#reticle" /></svg> FLIGHT CONTROLS
+          </div>
+          <div class="key-list">
+            <div><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>Steer</span></div>
+            <div><kbd>SPACE</kbd><span>Fire</span></div>
+            <div><kbd>SHIFT</kbd><span>Boost</span></div>
+            <div><kbd>P</kbd><span>Pause</span></div>
+          </div>
+        </div>
+        <div class="record">
+          <svg><use href="#cup" /></svg>
+          <div><small>PERSONAL BEST</small><strong id="best">000000</strong></div>
+        </div>
+      </section>
+      <footer>
+        <span><i></i> VC FLIGHT SYSTEM <em>//</em> V.1.0</span><span>LOCAL ARCADE <em>/</em> 1 PLAYER</span>
+      </footer>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
