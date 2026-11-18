@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-18T19:16:43.491Z",
+  "generatedAt": "2026-11-18T20:51:38.351Z",
   "benchmarks": [
     {
       "id": "retro-cruiser",
@@ -4254,6 +4254,90 @@
       "rubricId": "web-arcade-v1",
       "scorerVersion": "2.3.0",
       "runs": [
+        {
+          "slug": "claude-claude-fable-5-2-2026-11-18",
+          "agent": "claude",
+          "model": "claude-fable-5-2",
+          "reasoning": "high",
+          "ranAt": "2026-11-18T18:33:36.535Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 6016539,
+          "tokens": {
+            "input": 43908372,
+            "cachedInput": 43389781,
+            "output": 329497
+          },
+          "total": 77,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 194ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2.2,
+              "rationale": "5 distinct sprite sources, 61 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 3,
+              "rationale": "34 of 113 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 5,
+              "rationale": "45 modules, largest file 589 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "27412 byte README, 13 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": true,
+              "status": "pass",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 0.99,
+              "status": "info",
+              "detail": "92.2 → 91.3 draws per frame over 73s of one run"
+            }
+          ],
+          "buildBytes": 6070167,
+          "playable": "/lab/play/void-cruiser-3d/claude-claude-fable-5-2-2026-11-18/index.html",
+          "shots": [
+            "shots/void-cruiser-3d/claude-claude-fable-5-2-2026-11-18/00-title.webp",
+            "shots/void-cruiser-3d/claude-claude-fable-5-2-2026-11-18/02-mid.webp"
+          ]
+        },
         {
           "slug": "claude-claude-sonnet-5-5-2026-09-29",
           "agent": "claude",
