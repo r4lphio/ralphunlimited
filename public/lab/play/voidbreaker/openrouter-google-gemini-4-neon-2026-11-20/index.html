@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VOIDBREAKER</title>
+    <link rel="icon" type="image/png" href="./assets/sprites/ship.png" />
+    <script type="module" crossorigin src="./assets/index-CDlV3_Gd.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BFlWBT9B.css">
+  </head>
+  <body>
+    <canvas id="game-canvas" aria-label="Voidbreaker Arcade Arena"></canvas>
+
+    <!-- In-game HUD -->
+    <div id="hud" class="hud hidden">
+      <div class="hud-top">
+        <div class="hud-panel hud-left">
+          <div class="hud-row">
+            <span class="hud-label">SHIELDS</span>
+            <div id="hud-shields" class="shield-pips"></div>
+          </div>
+          <div class="hud-meter-wrap">
+            <div class="hud-meter-head">
+              <span class="hud-label">VOID PULSE</span>
+              <span id="hud-overdrive-label" class="hud-value cyan">0%</span>
+            </div>
+            <div class="meter-track">
+              <div id="hud-overdrive-bar" class="meter-fill overdrive-fill"></div>
+            </div>
+          </div>
+          <div class="hud-meter-wrap">
+            <div class="hud-meter-head">
+              <span class="hud-label">PHASE DASH</span>
+              <span class="hud-key">SHIFT / RMB</span>
+            </div>
+            <div class="meter-track slim">
+              <div id="hud-dash-bar" class="meter-fill dash-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hud-center">
+          <div class="wave-pill">
+            <span id="hud-sector" class="sector-name">ANTENNAE DRIFT</span>
+            <span class="pill-sep">·</span>
+            <span id="hud-wave" class="wave-num">WAVE 1</span>
+            <span id="hud-mode-badge" class="mode-badge hidden">DAILY</span>
+          </div>
+
+          <div id="hud-boss-bar-wrap" class="boss-bar-wrap hidden">
+            <div class="boss-bar-head">
+              <span id="hud-boss-name">MONOLITH CORE</span>
+              <span id="hud-boss-state" class="boss-state">PLATES ACTIVE</span>
+            </div>
+            <div class="meter-track boss-track">
+              <div id="hud-boss-bar" class="meter-fill boss-fill"></div>
+            </div>
+          </div>
+
+          <div id="hud-rift-wrap" class="rift-bar-wrap hidden">
+            <div class="boss-bar-head">
+              <span>VOID RIFT HARVEST</span>
+              <span id="hud-rift-pct">0%</span>
+            </div>
+            <div class="meter-track slim">
+              <div id="hud-rift-bar" class="meter-fill rift-fill"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hud-panel hud-right">
+          <div class="score-block">
+            <span class="hud-label">SCORE</span>
+            <span id="hud-score" class="score-value">0</span>
+            <span id="hud-best" class="best-sub">BEST 0</span>
+          </div>
+          <div class="combo-block">
+            <div id="hud-combo" class="combo-value">x1.0</div>
+            <div class="meter-track slim combo-track">
+              <div id="hud-combo-bar" class="meter-fill combo-fill"></div>
+            </div>
+          </div>
+          <button id="btn-hud-pause" class="icon-btn" type="button" title="Pause (Esc / P)">
+            II
+          </button>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div id="hud-upgrades" class="active-mods"></div>
+        <div class="bottom-bars">
+          <div class="heat-wrap">
+            <div class="hud-meter-head">
+              <span id="hud-heat-label" class="hud-label">PLASMA HEAT</span>
+              <span class="hud-key">REDLINE +38% · [R] VENT</span>
+            </div>
+            <div class="meter-track heat-track">
+              <div class="redline-zone"></div>
+              <div id="hud-heat-bar" class="meter-fill heat-fill"></div>
+            </div>
+          </div>
+          <div class="xp-wrap">
+            <div class="hud-meter-head">
+              <span id="hud-level" class="hud-label">SALVAGE LV.1</span>
+              <span id="hud-xp-text" class="hud-key">0 / 85</span>
+            </div>
+            <div class="meter-track slim">
+              <div id="hud-xp-bar" class="meter-fill xp-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Title / Hangar Screen -->
+    <div id="screen-title" class="overlay-screen">
+      <div class="title-card">
+        <header class="title-header">
+          <div class="title-brand">
+            <div class="eyebrow">SECTOR SALVAGE ARCADE · REIMAGINED FROM 2010 ASTEROID ENGINE</div>
+            <h1 class="game-title">VOIDBREAKER</h1>
+          </div>
+          <div class="profile-strip">
+            <div class="stat-chip">
+              <span class="chip-label">BEST SCORE</span>
+              <span id="title-best-score" class="chip-value">0</span>
+            </div>
+            <div class="stat-chip">
+              <span class="chip-label">BEST WAVE</span>
+              <span id="title-best-wave" class="chip-value">0</span>
+            </div>
+            <div class="stat-chip accent">
+              <span class="chip-label">VOID CREDITS</span>
+              <span id="title-credits" class="chip-value">0</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="mode-row">
+          <div class="mode-toggle" role="group" aria-label="Run mode">
+            <button id="btn-mode-standard" class="mode-btn active" type="button">
+              ARCADE RUN
+            </button>
+            <button id="btn-mode-daily" class="mode-btn" type="button">
+              DAILY VOID <span id="daily-date-label" class="daily-tag"></span>
+            </button>
+          </div>
+          <div class="quick-toggles">
+            <button id="btn-control-mode" class="ghost-btn" type="button">
+              CONTROLS: TWIN-STICK
+            </button>
+            <button id="btn-title-mute" class="ghost-btn" type="button">AUDIO: ON</button>
+          </div>
+        </div>
+
+        <div class="hangar-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="ships" type="button">INTERCEPTORS</button>
+          <button class="tab-btn" data-tab="perks" type="button">HANGAR TUNING</button>
+          <button class="tab-btn" data-tab="medals" type="button">
+            MEDALS <span id="medals-count" class="tab-count">0/8</span>
+          </button>
+        </div>
+
+        <section id="tab-ships" class="tab-panel">
+          <div id="ship-grid" class="ship-grid"></div>
+        </section>
+
+        <section id="tab-perks" class="tab-panel hidden">
+          <div id="perk-grid" class="perk-grid"></div>
+        </section>
+
+        <section id="tab-medals" class="tab-panel hidden">
+          <div id="medal-grid" class="medal-grid"></div>
+        </section>
+
+        <div class="howto-strip">
+          <div><strong>MOVE</strong> WASD / Arrows</div>
+          <div><strong>AIM &amp; FIRE</strong> Mouse + LMB / Space</div>
+          <div><strong>PHASE DASH</strong> Shift / RMB (Vents Heat + Grazes)</div>
+          <div><strong>VOID PULSE</strong> E / Q (When 100%)</div>
+          <div><strong>REDLINE</strong> Ride 68-98% heat for +38% DMG</div>
+        </div>
+
+        <div class="title-actions">
+          <button id="btn-launch" class="primary-btn" type="button">
+            LAUNCH INTERCEPTOR <span class="btn-hint">[ENTER]</span>
+          </button>
+          <div id="daily-best-note" class="daily-best-note hidden"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upgrade Draft Modal -->
+    <div id="screen-upgrade" class="overlay-screen hidden">
+      <div class="modal-card wide">
+        <div class="modal-eyebrow">SALVAGE LEVEL UP</div>
+        <h2 class="modal-title">INSTALL SHIP MOD</h2>
+        <p class="modal-sub">Pick one system upgrade to reshape your loadout for this run.</p>
+        <div id="draft-grid" class="draft-grid"></div>
+        <div class="draft-footer">
+          <button id="btn-reroll" class="ghost-btn" type="button">REROLL MODS (1)</button>
+          <span class="draft-tip">Press 1, 2, or 3 to select immediately</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div id="screen-pause" class="overlay-screen hidden">
+      <div class="modal-card compact">
+        <div class="modal-eyebrow">SYSTEM PAUSED</div>
+        <h2 class="modal-title">RUN SUSPENDED</h2>
+
+        <div class="settings-list">
+          <label class="setting-row">
+            <span>Control Mode</span>
+            <button id="btn-pause-control" class="ghost-btn" type="button">TWIN-STICK</button>
+          </label>
+          <label class="setting-row">
+            <span>Screen Shake</span>
+            <button id="btn-pause-shake" class="ghost-btn" type="button">ON</button>
+          </label>
+          <label class="setting-row">
+            <span>Music Volume</span>
+            <input id="slider-music" type="range" min="0" max="100" value="45" />
+          </label>
+          <label class="setting-row">
+            <span>SFX Volume</span>
+            <input id="slider-sfx" type="range" min="0" max="100" value="72" />
+          </label>
+          <label class="setting-row">
+            <span>Mute All</span>
+            <button id="btn-pause-mute" class="ghost-btn" type="button">OFF</button>
+          </label>
+        </div>
+
+        <div class="modal-actions vertical">
+          <button id="btn-resume" class="primary-btn" type="button">RESUME [ESC]</button>
+          <div class="action-split">
+            <button id="btn-restart" class="ghost-btn" type="button">RESTART RUN</button>
+            <button id="btn-quit-title" class="ghost-btn danger" type="button">HANGAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Over / Run Summary Modal -->
+    <div id="screen-gameover" class="overlay-screen hidden">
+      <div class="modal-card wide">
+        <div class="gameover-head">
+          <div>
+            <div id="go-mode-label" class="modal-eyebrow">RUN DEBRIEF</div>
+            <h2 class="modal-title">HULL LOST</h2>
+          </div>
+          <div class="go-score-box">
+            <span id="go-record-badge" class="record-badge hidden">NEW RECORD</span>
+            <div id="go-score" class="go-score-value">0</div>
+            <div id="go-best-delta" class="go-best-delta"></div>
+          </div>
+        </div>
+
+        <div id="go-stats" class="go-stats-grid"></div>
+        <div id="go-unlocks" class="go-unlocks hidden"></div>
+        <div id="go-build" class="go-build"></div>
+
+        <div class="modal-actions row">
+          <button id="btn-play-again" class="primary-btn" type="button">
+            LAUNCH AGAIN <span class="btn-hint">[ENTER]</span>
+          </button>
+          <button id="btn-go-hangar" class="ghost-btn" type="button">RETURN TO HANGAR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievement Toast -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  </body>
+</html>

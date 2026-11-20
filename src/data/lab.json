@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-18T20:51:38.351Z",
+  "generatedAt": "2026-11-20T20:07:12.497Z",
   "benchmarks": [
     {
       "id": "retro-cruiser",
@@ -489,6 +489,90 @@
           "durationMs": 318866,
           "tokens": null,
           "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "openrouter-google-gemini-4-neon-2026-11-20",
+          "agent": "openrouter",
+          "model": "google-gemini-4-neon",
+          "reasoning": "high",
+          "ranAt": "2026-11-20T19:24:50.537Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 1037195,
+          "tokens": {
+            "input": 3683997,
+            "cachedInput": 1931991,
+            "output": 103138
+          },
+          "total": 80,
+          "band": "strong",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 57ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 2.8,
+              "rationale": "12 distinct sprite sources, 65 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 4,
+              "rationale": "13 of 21 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "13 modules, largest file 2601 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "7068 byte README, 11 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": false,
+              "status": "fail",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": null,
+              "status": "skipped",
+              "detail": "run too short to measure escalation"
+            }
+          ],
+          "buildBytes": 1872169,
+          "playable": "/lab/play/voidbreaker/openrouter-google-gemini-4-neon-2026-11-20/index.html",
+          "shots": [
+            "shots/voidbreaker/openrouter-google-gemini-4-neon-2026-11-20/00-title.webp",
+            "shots/voidbreaker/openrouter-google-gemini-4-neon-2026-11-20/02-mid.webp"
+          ]
         },
         {
           "slug": "claude-claude-sonnet-5-5-2026-09-29",
@@ -2300,6 +2384,90 @@
             "shots/cruiser-reloaded/cursor-gemini-3.8-flash-high-2026-10-03/02-mid.webp"
           ],
           "scorerVersion": "2.3.0"
+        },
+        {
+          "slug": "openrouter-google-gemini-4-neon-2026-11-20",
+          "agent": "openrouter",
+          "model": "google-gemini-4-neon",
+          "reasoning": "high",
+          "ranAt": "2026-11-20T18:55:33.809Z",
+          "scorerVersion": "2.3.0",
+          "durationMs": 1022758,
+          "tokens": {
+            "input": 2851648,
+            "cachedInput": 1545496,
+            "output": 104237
+          },
+          "total": 94,
+          "band": "exceptional",
+          "gatePassed": true,
+          "gateFailedAt": null,
+          "criteria": [
+            {
+              "id": "runtime",
+              "label": "Runtime health",
+              "weight": 2,
+              "score": 5,
+              "rationale": "no console errors, first frame in 42ms, 59fps median"
+            },
+            {
+              "id": "loop",
+              "label": "Playable loop",
+              "weight": 2,
+              "score": 5,
+              "rationale": "input reaches a handler, score changes, reaches game over"
+            },
+            {
+              "id": "depth",
+              "label": "Systems depth",
+              "weight": 4,
+              "score": 5,
+              "rationale": "46 distinct sprite sources, 97 distinct screens"
+            },
+            {
+              "id": "assets",
+              "label": "Asset lineage",
+              "weight": 2,
+              "score": 4,
+              "rationale": "47 of 93 original assets reused by name or content"
+            },
+            {
+              "id": "code",
+              "label": "Code quality",
+              "weight": 2,
+              "score": 4,
+              "rationale": "14 modules, largest file 2203 lines, typed, has tests"
+            },
+            {
+              "id": "docs",
+              "label": "Documentation",
+              "weight": 1,
+              "score": 5,
+              "rationale": "9315 byte README, 12 sections"
+            }
+          ],
+          "observations": [
+            {
+              "id": "loop.restartWorks",
+              "label": "Restarts after game over",
+              "value": true,
+              "status": "pass",
+              "detail": null
+            },
+            {
+              "id": "depth.spawnRateDelta",
+              "label": "Late vs early draw calls",
+              "value": 1.16,
+              "status": "info",
+              "detail": "154.0 → 178.4 draws per frame over 29s of one run"
+            }
+          ],
+          "buildBytes": 4665792,
+          "playable": "/lab/play/cruiser-reloaded/openrouter-google-gemini-4-neon-2026-11-20/index.html",
+          "shots": [
+            "shots/cruiser-reloaded/openrouter-google-gemini-4-neon-2026-11-20/00-title.webp",
+            "shots/cruiser-reloaded/openrouter-google-gemini-4-neon-2026-11-20/02-mid.webp"
+          ]
         },
         {
           "slug": "codex-gpt-6.1-sol-2026-09-29",
